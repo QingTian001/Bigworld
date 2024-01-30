@@ -1,7 +1,7 @@
-package map.mapmodule.ecs;
+package map.mapmodule.entity;
 
 import cfg.obj.*;
-import map.mapmodule.ecs.component.Component;
+import map.mapmodule.entity.component.Component;
 import map.mapmodule.map.GMap;
 
 import java.util.*;

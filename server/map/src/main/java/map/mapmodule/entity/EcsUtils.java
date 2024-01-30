@@ -1,4 +1,4 @@
-package map.mapmodule.ecs;
+package map.mapmodule.entity;
 
 
 public class EcsUtils {

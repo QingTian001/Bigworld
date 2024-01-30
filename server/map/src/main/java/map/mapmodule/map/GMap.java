@@ -4,7 +4,6 @@ import map.mapmodule.event.EntityListener;
 import map.mapmodule.event.Event;
 import map.mapmodule.event.EventManager;
 import map.mapmodule.event.MapListener;
-import org.checkerframework.checker.units.qual.A;
 import pcore.io.Protocol;
 import pcore.misc.TaskQueue;
 
@@ -82,11 +81,11 @@ public abstract class GMap {
         eventManager.unregisterMapListener(clazz, listener);
     }
 
-    public final <T extends Event> void registerEntityListener(map.mapmodule.ecs.Entity entity, Class<T> clazz, EntityListener<T> listener) {
+    public final <T extends Event> void registerEntityListener(map.mapmodule.entity.Entity entity, Class<T> clazz, EntityListener<T> listener) {
         eventManager.registerEntityListener(entity, clazz, listener);
     }
 
-    public final <T extends Event> void unregisterEntityListener(map.mapmodule.ecs.Entity entity, Class<T> clazz, EntityListener<T> listener) {
+    public final <T extends Event> void unregisterEntityListener(map.mapmodule.entity.Entity entity, Class<T> clazz, EntityListener<T> listener) {
         eventManager.unregisterEntityListener(entity, clazz, listener);
     }
 
@@ -94,7 +93,7 @@ public abstract class GMap {
         eventManager.triggerMapEvent(event);
     }
 
-    public final void triggerEntityEvent(map.mapmodule.ecs.Entity entity, Event event) {
+    public final void triggerEntityEvent(map.mapmodule.entity.Entity entity, Event event) {
         eventManager.triggerEntityEvent(entity, event);
     }
 

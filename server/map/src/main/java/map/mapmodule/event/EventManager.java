@@ -1,6 +1,6 @@
 package map.mapmodule.event;
 
-import map.mapmodule.ecs.Entity;
+import map.mapmodule.entity.Entity;
 
 import java.util.HashMap;
 import java.util.HashSet;

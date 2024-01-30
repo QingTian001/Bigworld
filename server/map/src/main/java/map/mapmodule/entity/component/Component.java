@@ -1,7 +1,7 @@
-package map.mapmodule.ecs.component;
+package map.mapmodule.entity.component;
 
 import cfg.obj.EComponent;
-import map.mapmodule.ecs.Entity;
+import map.mapmodule.entity.Entity;
 import map.util.PackageScanner;
 import pcore.db.Trace;
 
@@ -12,7 +12,6 @@ import java.lang.reflect.ParameterizedType;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 
 public abstract class Component<C extends EComponent> {

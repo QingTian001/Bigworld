@@ -1,6 +1,6 @@
 package map.mapmodule.map;
 
-import map.mapmodule.ecs.Entity;
+import map.mapmodule.entity.Entity;
 
 /**
  * Created by zyao on 2019/12/6 19:17

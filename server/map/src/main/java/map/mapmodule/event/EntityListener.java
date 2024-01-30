@@ -1,7 +1,7 @@
 package map.mapmodule.event;
 
 
-import map.mapmodule.ecs.Entity;
+import map.mapmodule.entity.Entity;
 
 /**
  * Created by zyao on 2019/11/25 11:00
