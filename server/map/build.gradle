@@ -1,0 +1,93 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+sourceCompatibility = 11
+
+version = "0.0.1-SNAPSHOT"
+
+mainClassName = 'map.Main'
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    options.compilerArgs = ["-Xlint:unchecked", "-Xlint:deprecation"]
+}
+
+if (project.hasProperty('buildType')) {
+    def t = rootProject.tasks.getByName("startScripts");
+    if (project.buildType.equals("debug")) {
+        t.defaultJvmOpts = ["-Xms1536M", "-Xmx1536M", "-XX:+UseG1GC", "-Xlog:gc=trace:file=gc.txt:time,uptimemillis"]
+    }
+    else if (project.buildType.equals("internal")) {
+        t.defaultJvmOpts = ["-Xms2304M", "-Xmx2304M", "-XX:+UseG1GC", "-Xlog:gc=trace:file=gc.txt:time,uptimemillis"]
+    }
+    else if (project.buildType.equals("release")) {
+        t.defaultJvmOpts = ["-Xms11264M", "-Xmx11264M", "-XX:+UseG1GC", "-Xlog:gc=trace:file=gc.txt:time,uptimemillis"]
+    }
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','gen/msg', 'gen/cfg']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java','gen/msg', 'gen/cfg']
+        }
+    }
+}
+
+distTar {
+    archiveVersion = ""
+}
+
+distZip {
+    archiveVersion = ""
+}
+
+distributions {
+    main {
+        contents {
+            from ('log4j.properties') {
+                into 'bin'
+            }
+            from('config') {
+                into 'bin/config'
+            }
+            from ('map.json') {
+                into 'bin'
+            }
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    if (project.version.endsWith("-SNAPSHOT")) {
+//        maven{
+//            url "http://172.18.28.33:8081/repository/maven-snapshots"
+//        }
+
+        maven{
+            url 'http://maven.aliyun.com/nexus/content/repositories/central/'
+        }
+    } else {
+        mavenCentral()
+//        maven{
+//            url "http://172.18.28.33:8081/repository/maven-releases"
+//        }
+    }
+}
+
+dependencies {
+
+    compile fileTree(dir:'libs',include:['*.jar'])
+    //compile group: 'org.joml', name: 'joml', version: '1.9.13'
+    //compile group: 'net.sourceforge.jeval', name: 'jeval', version: '0.9.4'
+    //compile group: 'mafia', name: 'server_ex', version: '0.0.55-SNAPSHOT'
+    //compile (group: 'com.onemt', name: 'kite_node', version: '2.9-SNAPSHOT')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

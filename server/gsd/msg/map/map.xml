@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module name="msg">
+	<module name="map">
+		<bean name="Vector2">
+			<var name="x" type="float"/>
+			<var name="y" type="float"/>
+		</bean>
+
+		<bean name="Vector3">
+			<var name="x" type="float"/>
+			<var name="y" type="float"/>
+			<var name="z" type="float"/>
+		</bean>
+
+		<!--其它-->
+		<proto name="SDebugException"> 服务器错误
+			<var name="message" type="string"/>
+			<var name="stackTrace" type="string"/>
+		</proto>
+
+		<proto name="SMapDebugInfo"> 策划需要的信息，只在debug时发送
+			<var name="info" type="string"/>
+		</proto>
+	</module>
+	
+	<module name="gmap">
+		<proto name="GMMessage"> gs发给map的协议外层包装
+			<var name="mapId" type="long"/>
+			<var name="data" type="bytes"/>
+		</proto>
+		
+		<proto name="MGMessage"> map发给gs的协议外层包装
+			<var name="mapId" type="long"/>
+			<var name="data" type="bytes"/>
+		</proto>
+
+		
+		<!--其它-->
+		<proto name="GCfgReload"> 重新加载配置
+			<var name="version" type="int"/>
+		</proto>
+	</module>
+</module>

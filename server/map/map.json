@@ -1,0 +1,18 @@
+{
+  "serverId": 43002,
+  "dataDir": "config",
+  "log4jFile": "log4j.properties",
+  "debug": true,
+  "gsServer": {
+    "addr": "0.0.0.0",
+    "port": 32001
+  },
+  "linkClient": {
+    "servers": [
+      {
+        "addr": "172.18.28.33",
+        "port": 30421
+      }
+    ]
+  }
+}

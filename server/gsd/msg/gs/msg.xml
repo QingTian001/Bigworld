@@ -9,8 +9,14 @@
 	<ref name="gsServer">
 		<ref name="plink"/>
 		<ref name="gs"/>
+		<ref name="map"/>
 		<ref name="serverlist"/>
 		<ref name="gsau"/>
+	</ref>
+	<ref name="mapServer">
+		<ref name="plink"/>
+		<ref name="map"/>
+		<ref name="gmap"/>
 	</ref>
 	<ref name="client">
 		<ref name="gs"/>
@@ -19,6 +25,13 @@
 	
 	<ref name="gs" id="11">
 		<module name="msg.gs"/>		
+	</ref>
+	<ref name="map" id="12">
+		<module name="msg.map"/>
+	</ref>
+	<ref name="gmap">
+		<module name="msg.gmap"/>
+		<module name="msg.net"/>
 	</ref>
 	
 	<ref name="plink">
