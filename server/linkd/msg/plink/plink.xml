@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="msg.plink">
+
+	<!-- == link -> other server == -->
+	<proto name="LForward">
+		<var name="linkSid" type="long"/>
+		<var name="type" type="int"/>
+		<var name="data" type="bytes"/>
+	</proto>
+
+	<proto name="GForward">
+		<var name="linkSid" type="long"/>
+		<var name="data" type="bytes"/>
+    跟LForward不一样, data中包含了type和消息体
+	</proto>
+
+  <proto name="GMulticast">
+      <var name="sids" type="list,long"/>
+      <var name="data" type="octets"/>
+  </proto>
+
+  <proto name="LUserOnline">
+      <var name="userId" type="long"/>
+      <var name="linkSid" type="long"/>
+      <var name="isReconnet" type="bool"/>
+      <var name="accountId" type="string"/>
+      <var name="ip" type="string"/>
+      <var name="extra" type="bytes"/>
+  </proto>
+  
+  <proto name="GUserOnline">
+    <var name="err" type="int"/>
+	<var name="linkSid" type="long"/>
+  </proto>
+
+  <proto name="LLinkBroken">
+    <var name="userId" type="long"/>
+    <var name="linkSid" type="long"/>
+  </proto>
+  
+  <proto name="LUserKeepAlive">
+    <var name="linkSid" type="long"/>
+  </proto>
+
+  <proto name="GKickUser">
+    <var name="err" type="int"/>
+    <var name="linkSid" type="long"/>
+  </proto>
+
+  <proto name="GBroadcast">
+    <var name="data" type="octets"/>
+  </proto>
+  
+  <proto name="GBind">
+	<var name="pvid" type="int"/>
+    <var name="lindSids" type="set,long"/>
+  </proto>
+  
+  <proto name="GUnBind">
+	<var name="pvid" type="int"/>
+    <var name="lindSids" type="set,long"/>
+  </proto>
+  
+  <proto name="LAnnounceOuterNetAddress">
+    <var name="ip" type="string"/>
+    <var name="ipv6" type="string"/>
+	<var name="port" type="int"/>
+    <var name="isBackup" type="bool"/>
+  </proto>
+</module>

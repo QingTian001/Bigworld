@@ -1,0 +1,28 @@
+<module name="msg.linkau">
+  <include name="./linkau/linkau.xml"/>
+  <include name="./net/net.xml"/>
+  <include name="./clink/clink.xml"/>
+  <include name="./plink/plink.xml"/>
+
+  <ref name="link">
+    <ref name="linkau"/>
+    <ref name="clink"/>
+	<ref name="plink"/>
+  </ref>
+
+  <ref name="clink">
+    <module name="msg.clink"/>
+    <module name="msg.net"/>
+  </ref>
+
+  <ref name="plink">
+    <module name="msg.plink"/>
+    <module name="msg.net"/>
+  </ref>
+  
+  <ref name="linkau">
+    <module name="msg.linkau"/>
+    <module name="msg.net"/>
+  </ref>
+  
+</module>

@@ -1,0 +1,73 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'main.Main'
+
+version '1.0'
+
+sourceCompatibility = 11
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+distZip {
+    archiveVersion = ""
+}
+
+distTar {
+    archiveVersion = ""
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','gen/msg']
+        }
+    }
+}
+
+if (project.hasProperty('buildType')) {
+    def t = rootProject.tasks.getByName("startScripts");
+    if (project.buildType.equals("debug")) {
+        t.defaultJvmOpts = ["-Xms756M", "-Xmx756M", "-XX:+UseG1GC", "-Xlog:gc=trace:file=gc.txt:time,uptimemillis"]
+    }
+    else if (project.buildType.equals("internal")) {
+        t.defaultJvmOpts = ["-Xms1280M", "-Xmx1280M", "-XX:+UseG1GC", "-Xlog:gc=trace:file=gc.txt:time,uptimemillis"]
+    }
+    else if (project.buildType.equals("release")) {
+        t.defaultJvmOpts = ["-Xms1280M", "-Xmx1280M", "-XX:+UseG1GC", "-Xlog:gc=trace:file=gc.txt:time,uptimemillis"]
+    }
+}
+
+distributions {
+    main {
+        contents {
+            from ('log4j.properties') {
+                into 'bin'
+            }
+            from ('link.json') {
+                into 'bin'
+            }
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+//    maven {
+//        url "http://172.18.28.33:8081/repository/maven-releases"
+//    }
+//    maven {
+//        url "http://172.18.28.33:8081/repository/maven-snapshots"
+//    }
+}
+
+dependencies {
+    //compile group: 'com.onemt', name: 'kite_node', version: '3.0-SNAPSHOT'
+    //compile group: 'mafia', name: 'server_ex', version: '0.0.56-SNAPSHOT'
+    compile fileTree(dir:'libs',include:['*.jar'])
+}

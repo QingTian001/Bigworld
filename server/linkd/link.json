@@ -1,0 +1,39 @@
+{
+  "serverId": 10001,
+  "metrics" : {
+    "port":0
+  },
+
+  "linkServer": {
+    "addr": "0.0.0.0",
+    "port": 11001,
+    "publicIp": "182.92.69.112",
+    "publicIpv6": "fc00:1::2",
+    "publicIsBackup": false,
+    "forwardSessionKeepAliveTime": 30,
+    "limiter": {
+      "oneLimitNum" : 100,
+      "oneLimitSecs" : 10,
+      "allLimitNum" : 50,
+      "allLimitSecs" : 1
+    }
+  },
+  "providerServer": {
+    "addr": "0.0.0.0",
+    "port": 11004,
+    "expireTime": 60
+  },
+  "gm" : {
+    "telnetPort":0,
+    "isTest":true
+  },
+  "authClient": {
+    "reportLinkPublicAddr": true,
+    "servers": [
+      {
+        "addr": "127.0.0.1",
+        "port": 8092
+      }
+    ]
+  }
+}
