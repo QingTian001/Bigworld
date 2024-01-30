@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><module name="cfg">
+	<group name="server:client:designer:editor"/>
+
+	<include name="common.xml"/>	
+	<include name="localize/localize_de.xml"/>
+
+</module>

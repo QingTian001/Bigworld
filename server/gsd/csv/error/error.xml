@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module name="cfg.error">
+
+	<enum name="EErrorCode">
+		<var name="INTERNAL_EXCEPTION" value="-1"/>
+		<var name="OK" value="0"/>
+		<!-- 登陆 10~100 -->
+		<var name="LOGIN_FAIL" value="10"/>
+	</enum>
+
+<!--
+	<config group="client" input="error.xlsx" name="ErrorCode">
+		<var id="1" name="code" type="EErrorCode"/>
+		<var id="2" name="desc" type="string" localize="true"/>
+	</config>
+-->
+</module>

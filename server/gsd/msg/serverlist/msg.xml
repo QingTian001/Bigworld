@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="msg.serverlist">
+    <include name="../net/net.xml"/>
+    <include name="./serverlist.xml"/>
+
+    <ref name="serverlist">
+        <module name="msg.net"/>
+        <module name="msg.serverlist"/>
+    </ref>
+</module>

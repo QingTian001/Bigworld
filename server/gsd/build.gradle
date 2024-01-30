@@ -1,0 +1,143 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+sourceCompatibility = 10
+
+version = "0.0.1-SNAPSHOT"
+
+mainClassName = 'gs.Main'
+
+tasks.withType(JavaCompile) {
+    doFirst {
+        sourceSets.main.java.srcDirs.remove('fixCode')
+    }
+    options.encoding = "UTF-8"
+    options.compilerArgs = ["-Xlint:unchecked", "-Xlint:deprecation"]
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java','gen/msg', 'gen/xdb', 'gen/cfg', 'fixCode']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java','gen/msg', 'gen/xdb', 'gen/cfg']
+        }
+    }
+}
+
+distTar {
+    archiveVersion = ""
+}
+
+distZip {
+    archiveVersion = ""
+}
+
+
+if (project.hasProperty('buildType')) {
+    def t = rootProject.tasks.getByName("startScripts");
+    if (project.buildType.equals("debug")) {
+        if (project.hasProperty('debugPort')) {
+            t.defaultJvmOpts = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:" + project.debugPort]
+        } else {
+            t.defaultJvmOpts = []
+        }
+    }
+}
+
+task compileFixSource (type: JavaCompile, dependsOn: compileJava) {
+    doFirst {
+        sourceSets.main.java.srcDirs.remove('fixCode')
+    }
+    source = files(sourceSets.main.java.srcDirs, fileTree(dir:'.'))
+    include ("fixCode/*.java")
+    classpath = files (configurations.compile, sourceSets.main.output.classesDirs)
+    destinationDir = file('script')
+}
+
+configurations.all {
+    resolutionStrategy {
+        //check snapshot modules every build
+        cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
+distributions {
+    main {
+        contents {
+            from ('gs.json') {
+                into 'bin'
+            }
+            from('config') {
+                into 'bin/config'
+            }
+            from ('log4j.properties') {
+                into 'bin'
+            }
+            from ('shield_name.txt') {
+                into 'bin'
+            }
+            from('libs') {
+                into 'bin/libs'
+            }
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+
+    if (project.version.endsWith("-SNAPSHOT")) {
+//        maven{
+//            url "http://172.18.28.33:8081/repository/maven-snapshots"
+//        }
+
+        maven{
+            url 'http://maven.aliyun.com/nexus/content/repositories/central/'
+        }
+    } else {
+        mavenCentral()
+//        maven({
+//            url "http://172.18.28.33:8081/repository/maven-releases"
+//        })
+    }
+
+//    maven {
+//        url "http://10.0.0.55:8082/nexus/content/groups/public/"
+//    }
+
+    mavenCentral()
+}
+
+dependencies {
+
+    compile fileTree(dir:'libs',include:['*.jar'])
+    compile group: 'org.joml', name: 'joml', version: '1.9.13'
+    compile group: 'net.sourceforge.jeval', name: 'jeval', version: '0.9.4'
+    //compile (group: 'com.onemt', name: 'kite_node', version: '3.7-SNAPSHOT')
+//    compile (group: 'mafia', name: 'server_ex', version: '0.0.61-SNAPSHOT') {
+//        //exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+//    }
+//    compile 'com.onemt:onemt-java-loget-sdk:1.2.0'
+//    compile (group: 'com.onemt', name: 'onemt-java-sdk', version: '1.0.3') {
+//        exclude group: 'org.slf4j', module: 'slf4j-api'
+//        exclude group: 'ch.qos.logback', module: 'logback-classic'
+//    }
+
+
+}
+
+
+
+
+
+
+
+
+
+

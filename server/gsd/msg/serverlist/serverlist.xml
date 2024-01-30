@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="msg.serverlist">
+	<proto name="GAnnouceGsServerState">
+		<var name="serverId" type="int"/>
+		<var name="serverState" type="GsServerState"/>
+	</proto>
+
+	<proto name="GAnnouceGsServerInfo">
+		<var name="serverId" type="int"/>
+		<var name="onlineRoleNum" type="int"/>
+		<var name="registerRoleNum" type="int"/>
+	</proto>
+
+	<proto name="GAnnouceGsServerStart">
+		<var name="serverId" type="int"/>
+		<var name="startTime" type="long"/>
+		<var name="firstStartTime" type="long"/>
+	</proto>
+
+	<proto name="GAddGsServerLinkInfo">
+		<var name="serverId" type="int"/>
+		<var name="localId" type="int"/>
+		<var name="innerIp" type="string"/>
+		<var name="innerPort" type="int"/>
+		<var name="outerIp" type="string"/>
+		<var name="outerIpv6" type="string"/>
+		<var name="outerPort" type="int"/>
+		<var name="isBackup" type="bool"/>
+	</proto>
+
+	<proto name="GRmvGsServerLinkInfo">
+		<var name="serverId" type="int"/>
+		<var name="innerIp" type="string"/>
+		<var name="innerPort" type="int"/>
+	</proto>
+
+	<proto name="GReload">
+	</proto>
+
+	<proto name="GOpenStatistic">
+	</proto>
+
+	<proto name="GCloseStatistic">
+	</proto>
+
+	<bean name="LinkInfo">
+		<var name="ip" type="string"/>
+		<var name="port" type="int"/>
+	</bean>
+
+	<enum name="GsServerState">
+		<var name="CLOSE" value="0" />
+		<var name="NEW" value="1" />
+		<var name="NORMAL" value="2" />
+		<var name="HOT" value="3" />
+	</enum>
+
+	<proto name="S2GCustomServiceForward">
+		<var name="id" type="long"/>
+		<var name="data" type="bytes"/>
+	</proto>
+
+	<proto name="G2SCustomServiceForward">
+		<var name="id" type="long"/>
+		<var name="data" type="bytes"/>
+	</proto>
+
+	<proto name="GAnnouceGsServerlocalId">
+		<var name="serverId" type="int"/>
+		<var name="localId" type="int"/>
+	</proto>
+
+	<proto name="S2GTest">
+		<var name="v" type="int"/>
+	</proto>
+
+	<proto name="G2STest">
+		<var name="v" type="int"/>
+	</proto>
+
+	<bean name="RewardInfo">
+		<var name="bonusCfgId" type="int"/>
+		<var name="count" type="int"/>
+	</bean>
+
+	<bean name="SpecificLanguageMailInfo">
+		<var name="title" type="string"/>
+		<var name="content" type="string"/>
+	</bean>
+
+	<bean name="UnitUrlInfo">
+		<var name="urlType" type="string"/>
+		<var name="url" type="string"/>
+	</bean>
+
+	<bean name="SpecificLanguageUrlInfos">
+		<var name="specificLanuageUrlInfos" type="list:UnitUrlInfo"/>
+	</bean>
+
+	<enum name="ECustomServiceErrorCode">
+		<var name="TIMESTAMP_ERROR" value="1"/>
+		<var name="TIMESTAMP_SMALL_THAN_NOW" value="2"/>
+		<var name="REWARD_NOT_EXIST" value="3"/>
+		<var name="MAIL_NOT_EXIST" value="4"/>
+		<var name="GMMAIL_ID_DUPLICATED" value="5"/>
+		<var name="ROLE_ID_NOT_EXIST" value="6"/>
+		<var name="SUCCESS" value="7"/>
+		<var name="FAIL" value="8"/>
+		<var name="DEAFAULT_LAN_CONTENT_EMPTY" value="14"/>默认语言的文案不能为空
+		<var name="UNSUPPORT_ZONE" value="15"/>不支持的显示区域
+	</enum>
+	
+	<bean name="MailSendResult">
+		<bean name="MailSendResultSuccess">
+			<var name="gsCustomMailId" type="long"/>	GM后台发的邮件从gs返回的邮件id
+			<bean id="1" name="MailSendRolesResultSuccess">
+				<var name="roles" type="list:long"/>	
+			</bean>
+			<bean id="2" name="MailSendServerResultSuccess">
+			</bean>
+			<bean id="3" name="MailSendServerResultNoSuccess">
+			</bean>
+		</bean>
+		<bean name="MailSendResultError">
+			<bean id="11" name="MailSendResultRoleNotExists">
+				<var name="notExistRoleIds" type="list:long"/>	
+			</bean>
+			<bean id="12" name="MailSendResultNormalError">
+				<var name="errCode" type="ECustomServiceErrorCode"/>	
+			</bean>
+			<bean id="13" name="MailSendResultNoError">
+			</bean>
+		</bean>
+	</bean>
+	
+	<bean name="Result">
+		<bean name="Success">
+			<bean id="1" name="ResultSuccess">
+			</bean>
+			<bean id="2" name="QueryRoleMailResultSuccess">
+				<var name="mails" type="list,MailEntryInGM"/>
+				<var name="total" type="int"/>
+			</bean>
+		</bean>
+		<bean name="ResultError">
+			<bean id="11" name="NormalError">
+				<var name="errCode" type="ECustomServiceErrorCode"/>	
+			</bean>
+
+			<bean id="12" name="PushGiftError">
+				<var name="notExistsPushGifts" type="list,int"/>
+			</bean>
+		</bean>
+	</bean>
+
+	<bean name="CustomServiceMail">
+		<var name="customServiceMailId" type="int"/>
+		<var name="mailType" type="string"/>
+		<var name="mailInfos" type="map:string,SpecificLanguageMailInfo"/>
+		<var name="expireTimeStampInSecs" type="long"/>
+		<var name="rewardInfos" type="list:RewardInfo"/>
+		<var name="urlInfos" type="map:string:SpecificLanguageUrlInfos"/>
+
+		<bean id="1" name="RolesMail">
+			<var name="roleIds" type="list:long"/>
+		</bean>
+		<bean id="2" name="ServerMail">
+			<var name="sendNewRole" type="bool"/>
+		</bean>
+	</bean>
+
+	<proto name="S2GMailSendRoles">
+		<var name="mail" type="RolesMail"/>
+	</proto>
+
+	<proto name="S2GMailSendServer">
+		<var name="mail" type="ServerMail"/>
+	</proto>
+
+	<proto name="G2SMailSendRoles">
+		<var name="succResult" type="MailSendRolesResultSuccess"/>
+		<var name="errResult" type="MailSendResultError"/>
+	</proto>
+
+	<proto name="G2SMailSendServer">
+		<var name="result" type="MailSendResult"/>
+	</proto>
+
+	<proto name="S2GGsMailDel">
+		<var name="roleId" type="long"/>
+		<var name="gsMailId" type="long"/> 玩家Mail表的mailId
+	</proto>
+
+	<proto name="S2GCustomMailDel">
+		<var name="gsCustomMailId" type="long"/> 由GM后台发的邮件从gs返回的邮件id
+	</proto>
+
+	<proto name="G2SGsMailDel">
+		<var name="result" type="Result"/>
+	</proto>
+
+	<proto name="G2SCustomMailDel">
+		<var name="result" type="Result"/>
+	</proto>
+		
+	<!-- 查询接口 -->
+	
+	<proto name="S2GQueryRoleMail">
+		<var name="roleId" type="long"/>
+		<var name="sendStartTimeInSec" type="long"/>
+		<var name="sendEndTimeInSec" type="long"/>
+		
+		<var name="isRead" type="int"/>
+		<var name="isClaimed" type="int"/>
+		
+		<var name="language" type="string"/>
+		<var name="page" type="int"/>
+		<var name="pageSize" type="int"/>
+		<var name="order" type="string"/>
+	</proto>
+	
+	<bean name="MailEntryInGM">
+		<var name="roleId" type="long"/>
+		<var name="mailId" type="long"/>
+		<var name="mailType" type="string"/>
+		<var name="title" type="string"/>
+		<var name="isRead" type="int"/>
+		<var name="isClaimed" type="int"/>
+		<var name="rewards" type="map,int,long"/>
+		<var name="createTime" type="long"/>
+		<var name="expireTime" type="long"/>
+	</bean>
+	
+	<proto name="G2SQueryRoleMail">
+		<var name="result" type="Result"/>
+	</proto>
+	
+	<proto name="S2GShowMarquee">
+		<var name="contents" type="map,string,string"/> lan -> cotent
+		<var name="showZones" type="list,int"/>
+	</proto>
+	
+	<proto name="G2SShowMarquee">
+		<var name="result" type="Result"/>
+	</proto>
+	
+	<proto name="S2GGameOperate">
+		<var name="module" type="string"/>
+		<var name="command" type="string"/>
+		<var name="parameters" type="list,string"/>
+	</proto>
+	
+	<proto name="G2SGameOperate">
+		<var name="isSuccess" type="bool"/>
+		<var name="result" type="string"/>
+	</proto>
+
+	<bean name="PushRole">
+		<var name="roleId" type="long"/>
+		<var name="pushGifts" type="list,PushGift"/>
+	</bean>
+
+	<bean name="PushGift">
+		<var name="id" type="int"/>礼包id
+		<var name="pushId" type="long"/>流水id
+		<var name="pushTime" type="long"/>推送时间戳
+		<var name="showTime" type="int"/>展示倒计时 单位分钟
+		<var name="buyLimit" type="int"/>购买次数
+		<var name="displayOrder" type="int"/>展示权重
+		<var name="showStyle" type="int"/> 展示类型 
+	</bean>
+
+	<proto name="S2GPushGifts">
+		<var name="pushRoles" type="list,PushRole"/>
+	</proto>
+
+	<bean name="PushGiftsRet">
+		<var name="roleId" type="long"/>
+		<var name="result" type="Result"/>
+	</bean>
+
+	<proto name="G2SPushGifts">
+		<var name="results" type="list,PushGiftsRet"/>
+	</proto>
+
+	<proto name="G2SCreateAccount">
+		<var name="serverId" type="int"/>
+		<var name="ip" type="string"/>
+		<var name="language" type="string"/>
+		<var name="platform" type="string"/>
+	</proto>
+	
+	<bean name="SealAcountRet">
+		<var name="roleId" type="long"/>
+		<var name="result" type="Result"/>
+	</bean>
+	
+	<proto name="S2GSealAcount">封号
+		<var name="uids" type="list,long"/>
+		<var name="reasonType" type="int"/>
+		<var name="unSealAt" type="long"/>
+	</proto>
+
+	<proto name="G2SSealAcount">
+		<var name="results" type="list,SealAcountRet"/>
+	</proto>
+	
+	<proto name="S2GCancelSealAccount">解封号
+		<var name="uids" type="list,long"/>
+	</proto>
+
+	<proto name="G2SCancelSealAccount">
+		<var name="results" type="list,SealAcountRet"/>
+	</proto>
+</module>

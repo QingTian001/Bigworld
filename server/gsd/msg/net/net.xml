@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<module name="msg.net">
+  <proto name="GClientAnnouceServerInfo">
+    <var name="serverId" type="int"/>
+  </proto>
+  <proto name="GServerAnnouceServerInfo">
+	<var name="serverId" type="int"/>
+	<var name="keepAliveInterval" type="int"/>
+  </proto>
+  
+  <enum name="EErrorCode">
+	<var name="OK" value="0"/>
+	<var name="AUTH_FAIL" value="10"/> 认证未通过
+	<var name="AUTH_NET_ERROR" value="11"/> 认证服务器网络故障
+	<var name="SERVER_NOT_EXIST" value="20"/> 服务器不存在
+	
+	<var name="UNKNOWN_PROTOCOL" value="21"/>
+	<var name="MARSHAL_EXCEPTION" value="22"/>
+	<var name="PROTOCOL_EXCEPTION" value="23"/>
+	<var name="GS_USER_EXPIRE" value="24"/>
+	<var name="LINK_OFFLINE" value="25"/>
+	<var name="GS_SHUTDOWN" value="26"/>
+	<var name="LOGIN_EXCEPTION" value="27"/>
+	<var name="LOGIN_SAME_USER" value="28"/>
+	<var name="GS_ROLE_BANED" value="29"/>
+  </enum>
+</module>

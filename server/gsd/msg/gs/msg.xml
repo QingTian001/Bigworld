@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="msg.gs">
+	<include name="../plink/plink.xml"/>
+	<include name="../clink/clink.xml"/>
+	<include name="../net/net.xml"/>
+	<include name="./gs.xml"/>
+	<include name="../serverlist/serverlist.xml"/>
+	<include name="../gsau/gsau.xml"/>
+
+	<ref name="gsServer">
+		<ref name="plink"/>
+		<ref name="gs"/>
+		<ref name="serverlist"/>
+		<ref name="gsau"/>
+	</ref>
+	<ref name="client">
+		<ref name="gs"/>
+		<module name="msg.clink"/>
+	</ref>
+	
+	<ref name="gs" id="11">
+		<module name="msg.gs"/>		
+	</ref>
+	
+	<ref name="plink">
+		<module name="msg.net"/>
+		<module name="msg.plink"/>
+	</ref>
+	<ref name="serverlist">
+		<module name="msg.net"/>
+		<module name="msg.serverlist"/>
+	</ref>
+	<ref name="gsau">
+		<module name="msg.gsau"/>
+		<module name="msg.net"/>
+	</ref>
+</module>

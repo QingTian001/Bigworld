@@ -1,0 +1,96 @@
+{
+  "serverId": 41002,
+  "regionId": 1,
+  "dataDir": "config",
+  "log4jFile": "log4j.properties",
+  "debug": true,
+  "rechargeDebug": true,
+  "loginDebug": true,
+  "sensitiveWordsFile" : "shield_name.txt",
+  "timeZone" : "UTC",
+  "metrics" : {
+    "port":0
+  },
+  "linkClient" : {
+    "userExpireTime":60,
+    "servers" :[
+      {
+        "addr" : "182.92.69.112",
+        "port" :11004
+      }
+    ]
+  },
+  "mapClient" : {
+    "servers" :[
+      {
+        "lineId" : 1,
+        "addr" : "127.0.0.1",
+        "port" :32001
+      },
+
+      {
+        "lineId" : 2,
+        "addr" : "127.0.0.1",
+        "port" :32002
+      }
+    ]
+  },
+
+  "gm" : {
+    "gmPort":10001,
+    "isTest":true
+  },
+
+  "db": {
+    "localId" : 12,
+    "checkpointPeriod": 10,
+    "shrinkPeriod": 30,
+    "defaultRecordExpireTime": 300,
+    "defaultCacheRecordNum": 10000,
+    "backupPeriod" : "3600",
+    "allowBackup": false,
+
+    "tables": [
+      {
+        "name": "roleinfos",
+        "maxCacheRecordNum": 10000,
+        "recordExpireTime" : 1800
+      }
+    ],
+    "storage" : {
+      "type": "pdb",
+      "dbHome" : "gs.db",
+      "libHome" : "libs",
+      "backupHome" : "_backup_"
+    },
+    "slaveStorage" : {
+      "open":false,
+      "type" : "mysql;loget",
+      "userName" : "mcw_user",
+      "password" : "mcw_user@123",
+      "url": "jdbc:mysql://172.18.28.33:3306/slave?useUnicode=true&characterEncoding=utf8&useSSL=false&rewriteBatchedStatements=true",
+      "initialSize" : 10,
+      "maxTotal" : 50,
+      "maxIdle" : 60,
+      "maxWaitMillis":10000,
+      "minIdle" : 30
+    }
+  },
+  "serverList" : {
+      "synchServerRoleNumIntervalInMillis": 5000,
+      "servers" :[
+        {
+          "addr" : "182.92.69.112",
+          "port" :11003
+        }
+      ]
+    },
+  "aud" : {
+    "keepAliveInterval": 30,
+    "server" :
+    {
+      "addr" : "182.92.69.112",
+      "port" : 11002
+    }
+  }
+}

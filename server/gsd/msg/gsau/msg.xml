@@ -1,0 +1,9 @@
+<module name="msg.linkau">
+  <include name="../net/net.xml"/>
+  <include name="./gsau/gsau.xml"/>
+
+  <ref name="gsau">
+    <module name="msg.gsau"/>
+    <module name="msg.net"/>
+  </ref>
+</module>

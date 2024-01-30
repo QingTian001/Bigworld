@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module name="cfg.time">
+	
+	<bean name="Time">
+		
+		<bean name="DateTime" sep="-,:">格式 yyyy-mm-dd,hh:mm 如 2019-4-20,7:0 表示2019年4月20号7时0分
+			<var name="year" type="int"/>
+			<var name="month" type="int"/>
+			<var name="day" type="int"/>
+			<var name="hour" type="int"/>
+			<var name="minute" type="int"/>
+		</bean>
+		<bean name="OneDayTime" sep=":">格式 hh:mm 如 13:0
+			<var name="hour" type="int"/>
+			<var name="minute" type="int"/>
+		</bean>
+
+		<bean name="WeekTime" sep=",:">格式 ww,hh:mm  如  3,10:9 表示星期三10点9分
+			<var name="weekDay" type="int"/>
+			<var name="hour" type="int"/>
+			<var name="minute" type="int"/>
+		</bean>
+		
+		<bean name="DayTime">
+			<var name="dayOfMonth" type="int"/>
+			<var name="hour" type="int"/>
+			<var name="minute" type="int"/>
+		</bean>	
+		
+		<bean name="CompleteTime">
+			<var name="year" type="array,int"/> 不填表示每年
+			<var name="month" type="array,int"/> 不填表示每月
+			<var name="hour" type="array,int"/> 不填表示天中的每小时
+			<var name="minute" type="array,int"/> 不填表示时中的每分钟
+		<bean name="CompleteDayTime">
+			<var name="dayOfMonth" type="array,int"/> 不填表示月中的每天
+		</bean>
+		<bean name="CompleteWeekTime">
+			<var name="weekDay" type="array,int"/> 不填表示每个周内天
+		</bean>
+		</bean>
+	</bean>
+	
+	<bean name="TimeRange">
+		<bean name="OneDayRange"> 一天内时间范围
+			<var name="beginTime" type="OneDayTime"/>
+			<var name="endTime" type="OneDayTime"/>
+		</bean>
+
+		<bean name="WeekRange"> 一周内时间范围
+			<var name="beginTime" type="WeekTime"/>
+			<var name="endTime" type="WeekTime"/>
+		</bean>
+		
+		<bean name="DayRange"> 一月内时间范围
+			<var name="beginTime" type="DayTime"/>
+			<var name="endTime" type="DayTime"/>
+		</bean>
+		
+		beginTime忽略hour和minute + deltaDaysNum - 1 = endTime忽略hour和minute  
+		=======|-----------|-----------|-----------|============|-----------|-----------|-----------|=====
+               1           2           3           4            7(1)        8(2)        9(3)        10(4)
+		1: beginTime忽略hour和minute
+		4: endTime忽略hour和minute + 1
+        deltaDaysNum = 4 - 1 = 3
+		loopdaysNum = 7 - 1 = 6
+	
+		<bean name="MultipleDayRange"> 几天内时间范围 
+			<var name="baseDateTime" type="DateTime"/> 会忽略hour和minute 必须能和某个beginTime忽略hour和minute对应上
+			<var name="beginTime" type="OneDayTime"/>
+			<var name="deltaDaysNum" type="int"/>
+			<var name="endTime" type="OneDayTime"/>
+			<var name="loopDaysNum" type="int"/>
+		</bean>
+		
+			beginTime忽略hour和minute + deltaDaysNum = endTime忽略hour和minute  
+		<bean name="MultipleWeekRange"> 几周内时间范围 
+			<var name="baseDateTime" type="DateTime"/> 会精确找到BaseDateTime的
+			<var name="beginTime" type="WeekTime"/>
+			<var name="deltaWeeksNum" type="int"/>  
+			<var name="endTime" type="WeekTime"/>
+			<var name="loopWeeksNum" type="int"/>
+		</bean>
+		
+		<bean name="DateRange"> 两个时间范围
+			<var name="beginTime" type="DateTime"/>
+			<var name="endTime" type="DateTime"/>
+		</bean>
+		
+		<bean name="ServerStartTimeRange"> 服务器启动时间范围
+			<var name="delayDaysNum" type="int"/> 0 ~ n, 将服务器启动时间对齐当天0点之后, 推迟的天数, 说白了就是, 0天表示起服当天, 1天表示起服的下一天
+			<var name="beginTime" type="OneDayTime"/> 在当天的具体时间
+			<var name="lastSeconds" type="int"/> 持续的秒数
+		</bean>
+		
+		<bean name="TimeRanges"> 比如可以用来描述每年的1,3,5,7,9,11月的周一到周五的8-10, 16-18点
+			<var name="year" type="array,int"/>
+			<var name="month" type="array,int"/>
+			<bean name="WeekRanges">
+				<var name="weekRanges" type="array,WeekRange"/>
+			</bean>
+			<bean name="DayRanges">
+				<var name="dayRanges" type="array,DayRange"/>
+			</bean>
+			<bean name="OneDayRanges">
+				<var name="oneDayRanges" type="array,OneDayRange"/>
+			</bean>
+		</bean>
+		
+	</bean>
+
+	<!--	
+	<config input="time.xlsx" name="TestTime">
+        <var name="id" type="int"/>
+        <var name="timeRange" type="MultipleDayRange"/>
+		<var name="weekTimeRange" type="MultipleWeekRange"/>
+    </config>
+	-->
+
+</module>

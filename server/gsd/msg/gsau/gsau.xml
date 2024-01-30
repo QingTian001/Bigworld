@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="msg.gsau">
+	<proto name="GPullRecharge">
+		<var name="serverId" type="int"/>
+	</proto>
+
+	<proto name="APullRecharge">
+		<var name="recharges" type="list,RechargeInfo"/>
+	</proto>
+
+	<bean name="RechargeInfo">
+		<var name="uid" type="long"/>
+		<var name="roleId" type="long"/>
+		<var name="orderId" type="string"/>
+		<var name="sdkOrderId" type="string"/>
+		<var name="loginAccountId" type="string"/>
+		<var name="channel" type="string"/>
+		<var name="serverId" type="int"/>
+		<var name="goodsId" type="string"/>
+		<var name="price" type="int"/>
+		<var name="state" type="int"/>
+		<var name="rechargeAccountId" type="string"/>
+		<var name="gear" type="int"/>
+	</bean>
+
+	<proto name="GPullRechargeSuccess">
+		<var name="uid" type="long"/>
+		<var name="roleId" type="long"/>
+		<var name="orderId" type="string"/>
+		<var name="channel" type="string"/>
+		<var name="accountId" type="string"/>
+	</proto>
+	
+	<proto name="GRechargeOrder">
+		<var name="uid" type="long"/>
+		<var name="roleId" type="long"/>
+		<var name="serverId" type="int"/>
+		<var name="channel" type="string"/>
+		<var name="gear" type="int"/>
+		<var name="accountId" type="string"/>带@
+	</proto>
+	
+	<proto name="ARechargeOrder">
+		<var name="roleId" type="long"/>
+		<var name="state" type="CheckState"/>
+		<var name="orderId" type="string"/>
+		<var name="gear" type="int"/>
+		<var name="createTime" type="long"/>
+	</proto>
+
+	<proto name="GUserLogin">
+		<var name="uid" type="long"/>
+		<var name="accountId" type="string"/>
+		<var name="roleId" type="long"/>
+		<var name="roleName" type="string"/>
+		<var name="roleLevel" type="int"/>
+		<var name="avatarId" type="int"/>
+		<var name="serverId" type="int"/>
+		<var name="loginTime" type="long"/>
+	</proto>
+
+	<proto name="GUserUpgradeNotify">
+		<var name="uid" type="long"/>
+		<var name="accountId" type="string"/>
+		<var name="roleId" type="long"/>
+		<var name="roleLevel" type="int"/>
+	</proto>
+
+	<proto name="GSwitchAvatarNotify">
+		<var name="uid" type="long"/>
+		<var name="accountId" type="string"/>
+		<var name="roleId" type="long"/>
+		<var name="avatarId" type="int"/>
+	</proto>
+
+	<enum name="CheckState">
+		<var name="FAIL" value="0"/>
+		<var name="OK" value="1"/>
+	</enum>
+</module>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="msg.clink">
+
+	<bean name="ServerInfo">
+		<var name="roleId" type="long"/>
+		<var name="roleName" type="string"/>
+		<var name="roleLevel" type="int"/>
+		<var name="avatarId" type="int"/>
+		<var name="serverId" type="int"/>
+		<var name="lastLoginTime" type="long"/>
+	</bean>
+
+	<bean name="AccountCheckExtra">
+		<var name="servers" type="list,ServerInfo"/>
+	</bean>
+
+	<proto name="CLoginAccountCheck">
+		<var name="channel" type="string"/>
+		<var name="ip" type="string"/>
+		<var name="devicedId" type="string"/>
+		<var name="params" type="list,string"/>
+	</proto>
+
+	<proto name="SLoginAccountCheck">
+		<var name="retCode" type="int"/>
+		<var name="token" type="string"/>
+		<var name="uid" type="long"/>
+		<var name="overdueTime" type="long"/>
+		<var name="extra" type="bytes"/>
+	</proto>
+
+	<proto name="CLoginTokenCheck">
+		<var name="uid" type="long"/>
+		<var name="gsServerId" type="int"/>
+		<var name="token" type="string"/>
+		<var name="isReconnect" type="bool"/>
+		<var name="extra" type="bytes"/>
+	</proto>
+
+	<proto name="SLoginTokenCheck"> Token验证失败时返回这个协议
+		<var name="err" type="int"/>
+		<var name="uid" type="long"/>
+	</proto>
+
+	<!-- client -> link -->
+	<proto name="CForward">
+		<var name="pvid" type="int"/>
+		<var name="type" type="int"/> 包装协议的类型
+		<var name="data" type="bytes"/> 包装协议marshal的字节数组
+	</proto>
+
+	<proto name="SKickUser">
+		<var name="err" type="int"/>
+	</proto>
+	
+	<proto name="SOnlineAnnounce">
+		<var name="uid" type="long"/>
+	</proto>
+
+</module>

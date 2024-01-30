@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="cfg.localize">
+	<config name="Localization" input="localization_de.xlsx" group="server" mode="list">
+		<var name="origin" type="string" localize="false"/>
+		<var name="indexStr" type="string" localize="false"/>
+		<var name="localization" type="string" localize="false"/>
+	</config>
+
+	<bean name="localizeString">
+		<var name="context" type="string"/>
+		<var name="inputParams" type="array,string" localize="false"/>
+	</bean>
+</module>

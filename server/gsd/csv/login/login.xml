@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><module name="cfg.login">	
+	<config input="loginconfig.xlsx" name="LoginConfig" mode="one">
+		<var name="loginTextureIndex" type="string" localize="false"/>登陆选服loader图片索引
+		<var name="myAreaId" type="int"/>我的服务器所属大区id
+		<var name="myAreaName" type="string"/> 我的服务器
+		<var name="randomUserAccountLen" type="int"/>随机账号长度s
+		<var name="gapIntervals" type="int"/>后台切前台间隔时间内重连，超过进行非重连 单位s
+		<var name="activeIntervals" type="int"/>后台切前台间隔时间内尝试用旧的链接 单位s
+		<var name="pingPongGaptime" type="int"/>ping后等待服务器返回pong时间 单位s
+		<var name="reconnectTotalCount" type="int"/>断线重连多少次弹出客户端确认界面
+		<var name="reconnectIntervals" type="float"/>每隔多少秒进行一次重连
+	</config>
+	
+	<config input="logingroup.xlsx" name="LoginGroup" group="client">
+		<var name="id" type="int"/>
+		<var name="name" type="string" localize="true"/>
+	</config>
+	
+	<config input="server.xlsx" name="Server" group="client">
+		<var name="id" type="int"/>
+		<var name="name" type="string" localize="false"/>
+	</config>
+</module>

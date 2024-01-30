@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module name="msg">
+    <module name="gs">
+
+		<proto name="SError">
+            <var name="err" type="int"/>
+            <var name="parameters" type="list,string"/>
+        </proto>
+        <proto name="CPing">
+        </proto>
+        <proto name="SPong">
+        </proto>
+
+        <module name="login">
+            <proto name="SUserLogin">
+                <var name="err" type="int"/>
+                <var name="roleInfo" type="RoleInfo"/>
+                <var name="now" type="long"/>
+            </proto>
+
+            <proto name="SUserLoginSuccess">此条协议发往客户端表明 服务器玩家登陆完成，所有同步的s协议发完
+                <var name="isReconnect" type="bool"/>
+            </proto>
+
+            <bean name="RoleInfo">
+                <var name="roleId" type="long"/>
+                <var name="userId" type="long"/>
+                <var name="name" type="string"/>
+                <var name="serverId" type="int"/>
+                <var name="accountId" type="string"/>渠道账号,带@channel
+                <var name="createTimeInMillis" type="long"/>
+				<var name="lastLogicLoginTimeMills" type="long"/>
+            </bean>
+        </module>
+
+        <module name="gm">
+            <bean name="ParamInfo">
+                <var name="name" type="string"/>
+                <var name="desc" type="string"/>
+                <var name="type" type="string"/>
+            </bean>
+            <bean name="CommandInfo">
+                <var name="name" type="string"/>
+                <var name="desc" type="string"/>
+                <var name="parameters" type="list,ParamInfo"/>
+            </bean>
+            <bean name="ModuleInfo">
+                <var name="name" type="string"/>
+                <var name="desc" type="string"/>
+                <var name="commands" type="list,CommandInfo"/>
+            </bean>
+
+            <proto name="CGetModuleList">
+            </proto>
+            <proto name="SGetModuleList">
+                <var name="modules" type="list,ModuleInfo"/>
+            </proto>
+            <proto name="CExecuteCommand">
+                <var name="module" type="string"/>
+                <var name="command" type="string"/>
+                <var name="parameters" type="list,string"/>
+            </proto>
+            <proto name="SExecuteCommand">
+                <var name="result" type="string"/>
+            </proto>
+        </module>
+		
+    </module>
+</module>
+
+
+

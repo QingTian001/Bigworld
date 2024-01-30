@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xdb name="xbean">
+
+	<bean name="XLong">
+        <var id="1" name="value" type="long"/>
+    </bean>
+    <bean name="XString">
+        <var id="1" name="value" type="string"/>
+    </bean>
+	
+    <!-- 账号数据表 -->
+    <bean name="User">
+        <var id="1" name="roleId" type="long"/>
+    </bean>
+
+    <table key="long" name="Users" value="User"/>
+	
+	<bean name="ServerInfo">
+        <var id="1" name="startTimeMills" type="long"/>服务器启动时间
+    </bean>
+
+    <table key="long" name="Server" value="ServerInfo"/> 以0为key存储
+
+    <!-- 渠道账号数据表 -->
+    <bean name="AccountUser">
+        <var id="1" name="accountId" type="string"/>
+        <var id="2" name="userId" type="long"/>
+        <var id="3" name="roleId" type="long"/>
+    </bean>
+    <table key="string" name="AccountUsers" value="AccountUser"/>
+	
+    <!--角色信息表-->
+    <bean name="RoleInfo">
+        <var id="1" name="userId" type="long"/> 账号id
+        <var id="2" name="createTimeMills" type="long"/> 角色创建时间
+        <var id="3" name="accountId" type="string"/> 完整第三方登陆账号id
+    </bean>
+
+    <table key="long" name="RoleInfos" value="RoleInfo"/>
+
+    <!--名字表-->
+    <table key="string" name="RoleNameInfos" value="XLong"/> key name value roleId
+
+
+    <!-- 测试用表 -->
+    <bean name="TestInnerBean">
+        <var id="1" name="it1" type="long"/>
+    </bean>
+
+    <bean name="TestBean">
+        <var id="1" name="t1" type="long"/>
+        <var id="2" name="t2" type="int"/>
+        <var id="3" name="t3" type="string"/>
+        <var id="4" name="t4" type="TestInnerBean"/>
+        <var id="5" name="t5" type="list,TestInnerBean"/>
+        <var id="6" name="t6" type="map,int,TestInnerBean"/>
+        <var id="7" name="t7" type="set,int"/>
+    </bean>
+
+    <table key="long" name="test" value="TestBean"/>
+	
+</xdb>
