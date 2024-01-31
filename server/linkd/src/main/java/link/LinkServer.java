@@ -13,6 +13,7 @@ import msg.net.EErrorCode;
 import msg.plink.LForward;
 import msg.plink.LLinkBroken;
 import msg.plink.LUserKeepAlive;
+import msg.plink.LUserOnline;
 import pcore.collection.LongConcurrentHashMap;
 import pcore.db.Trace;
 import pcore.io.Dispatcher;
@@ -138,19 +139,27 @@ public final class LinkServer extends Server<LinkSession> {
             linkSession.setReconnect(p.isReconnect);
             linkSession.setExtraInfo(p.extra);
             if (linkSession.getState() == LinkSession.STATE.NONE) {
-                DynamicMultiClientManager.DynamicClient auth = AuthManager.getInst().getRandomAuth();
-                linkSession.setAuthClient(auth);
+//                DynamicMultiClientManager.DynamicClient auth = AuthManager.getInst().getRandomAuth();
+                //linkSession.setAuthClient(auth);
                 linkSession.setUserId(p.uid);
+                //linkSession.setAuthClient(auth);
+//                linkSession.setUserId(p.uid);
+                var addr = linkSession.getConnection().getRemoteSocketAddress();
+                linkSession.forwardToGs(new LUserOnline(linkSession.getUserId(), linkSession.getSessionId(),
+                        linkSession.isReconnect(), String.valueOf(p.uid), addr.getAddress().getHostAddress(), linkSession.getExtraInfo()));
+                linkSession.setState(LinkSession.STATE.LOGIN);
+
             } else if (linkSession.getState() == LinkSession.STATE.SEND_ACCOUNT_CHECK_RESULT) {
                 if (linkSession.getUserId() != p.uid) {
                     Trace.error("session:{} receive CLoginTokenCheck with error useId:{}", linkSession, p.uid);
                     linkSession.close();
                     return;
                 }
+                DynamicMultiClientManager.DynamicClient authClient = linkSession.getAuthClient();
+                authClient.send(new LTokenCheck(linkSession.getSessionId(), p.uid, p.token));
+                linkSession.setState(LinkSession.STATE.RECV_TOKEN_CHECK);
             }
-            DynamicMultiClientManager.DynamicClient authClient = linkSession.getAuthClient();
-            authClient.send(new LTokenCheck(linkSession.getSessionId(), p.uid, p.token));
-            linkSession.setState(LinkSession.STATE.RECV_TOKEN_CHECK);
+
         }
     }
 

@@ -35,9 +35,9 @@ public class Main {
         linkConf.dispatcher = LinkServer.getDispatcher();
         LinkServer.start(BootConfig.getIns().getLinkConf());
 
-        AuthConf authConf = BootConfig.getIns().getAuthConf();
-        authConf.init(workerEventLoopGroup, new Int2ObjectHashMap<>(Refs.linkau), AuthManager.getDispatcher());
-        AuthManager.start(authConf);
+//        AuthConf authConf = BootConfig.getIns().getAuthConf();
+//        authConf.init(workerEventLoopGroup, new Int2ObjectHashMap<>(Refs.linkau), AuthManager.getDispatcher());
+//        AuthManager.start(authConf);
 
         ProviderConf providerConf = BootConfig.getIns().getProviderConf();
         providerConf.bossGroup = bossEventLoopGroup;

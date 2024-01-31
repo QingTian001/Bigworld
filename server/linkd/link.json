@@ -7,7 +7,7 @@
   "linkServer": {
     "addr": "0.0.0.0",
     "port": 11001,
-    "publicIp": "182.92.69.112",
+    "publicIp": "127.0.0.1",
     "publicIpv6": "fc00:1::2",
     "publicIsBackup": false,
     "forwardSessionKeepAliveTime": 30,
