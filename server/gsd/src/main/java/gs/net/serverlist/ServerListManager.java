@@ -173,12 +173,12 @@ public class ServerListManager extends DynamicMultiClientManager {
 
     public static void removeLinkInfo(String innerIp, int innerPort) {
         linkAddrs.remove(LinkAddr.makeKey(innerIp, innerPort));
-        ServerListManager.getInst().rmvServerLinkInfo(innerIp, innerPort);
+        //ServerListManager.getInst().rmvServerLinkInfo(innerIp, innerPort);
     }
 
     public static void addLinkInfo(LinkAddr linkAddr) {
         linkAddrs.put(linkAddr.buildKey(), linkAddr);
-        ServerListManager.getInst().addServerLinkInfo(linkAddr);
+        //ServerListManager.getInst().addServerLinkInfo(linkAddr);
     }
 
     private synchronized boolean setTaskFutureToNull() {

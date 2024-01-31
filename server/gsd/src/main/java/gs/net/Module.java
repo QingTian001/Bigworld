@@ -22,16 +22,16 @@ public enum Module {
             LinkManager.start(linkConf);
         }
 
-        {
-            var config = conf.getAudConf();
-            config.init(worker, AudClient.getDispatcher(), new Int2ObjectHashMap<>(Refs.gsau));
-            AudClient.start(config);
-        }
-        {
-            var config = conf.getServerListConf();
-            config.init(worker, new Int2ObjectHashMap<>(Refs.serverlist), ServerListManager.getDispatcher());
-            ServerListManager.start(config);
-        }
+//        {
+//            var config = conf.getAudConf();
+//            config.init(worker, AudClient.getDispatcher(), new Int2ObjectHashMap<>(Refs.gsau));
+//            AudClient.start(config);
+//        }
+//        {
+//            var config = conf.getServerListConf();
+//            config.init(worker, new Int2ObjectHashMap<>(Refs.serverlist), ServerListManager.getDispatcher());
+//            ServerListManager.start(config);
+//        }
 
     }
 }

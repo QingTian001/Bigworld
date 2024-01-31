@@ -15,7 +15,7 @@
     "userExpireTime":60,
     "servers" :[
       {
-        "addr" : "182.92.69.112",
+        "addr" : "127.0.0.1",
         "port" :11004
       }
     ]
@@ -26,12 +26,6 @@
         "lineId" : 1,
         "addr" : "127.0.0.1",
         "port" :32001
-      },
-
-      {
-        "lineId" : 2,
-        "addr" : "127.0.0.1",
-        "port" :32002
       }
     ]
   },
@@ -80,7 +74,7 @@
       "synchServerRoleNumIntervalInMillis": 5000,
       "servers" :[
         {
-          "addr" : "182.92.69.112",
+          "addr" : "127.0.0.1",
           "port" :11003
         }
       ]
@@ -89,7 +83,7 @@
     "keepAliveInterval": 30,
     "server" :
     {
-      "addr" : "182.92.69.112",
+      "addr" : "127.0.0.1",
       "port" : 11002
     }
   }

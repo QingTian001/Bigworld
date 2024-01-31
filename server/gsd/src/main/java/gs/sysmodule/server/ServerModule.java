@@ -70,7 +70,7 @@ public enum ServerModule implements IModule {
      */
     public void sendAnnouceGsServerStart2ServerList() {
         if (startTimeMills > 0 && serverFirstStartTimeMills > 0) {
-            ServerListManager.getInst().broadcast(makeGAnnouceGsServerStart());
+            //ServerListManager.getInst().broadcast(makeGAnnouceGsServerStart());
         }
     }
 
