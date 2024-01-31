@@ -19,3 +19,16 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+/server/map/config
+/server/gsd/config
+/server/gsd/gs.db
+/server/gsd/logs
+/server/gsd/gen
+/server/linkd/gen
+/server/linkd/logs
+/server/gsd/bi
+/server/map/bi
+/server/map/logs
+/server/bin/map/bin/bi
+/server/bin/map/bin/logs
+/server/bin/map/bin/config

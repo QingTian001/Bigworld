@@ -27,7 +27,7 @@ public abstract class GMap {
     private final HashSet<DelayTask> delayTasks = new HashSet<>();
 
 
-    public GMap(GMapBuilder builder) {
+    public GMap() {
         id = ID_GEN.incrementAndGet();
     }
 

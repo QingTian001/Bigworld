@@ -2,6 +2,7 @@ package map.mapmodule;
 
 import map.cfg.BootConfig;
 import map.mapmodule.map.GMap;
+import map.mapmodule.map.MapId;
 import map.mapmodule.msg.GsMsgContext;
 import map.mapmodule.msg.LinkMsgContext;
 import map.mapmodule.msg.MsgUtil;
@@ -20,12 +21,14 @@ import msg.plink.LLinkBroken;
 import pcore.collection.Int2ObjectHashMap;
 import pcore.collection.LongConcurrentHashMap;
 import pcore.db.Trace;
+import pcore.event.EventHandler;
 import pcore.io.IProtocolFactory;
 import pcore.io.Protocol;
 import pcore.io.ProtocolUtils;
 import pcore.misc.TaskQueue;
 
 import java.util.concurrent.*;
+import java.util.*;
 
 public enum Module {
     Ins;
@@ -40,6 +43,9 @@ public enum Module {
     private final int QUEUE_MASK = QUEUE_LENGTH - 1;
     private final TaskQueue[] taskQueues = new TaskQueue[QUEUE_LENGTH];
     private final ConcurrentHashMap<LsId, Role> lsId2RoleMap = new ConcurrentHashMap<>();
+
+    private volatile boolean gsConnected = false;
+    public Map<MapId, GMap> gMaps = new ConcurrentHashMap<>();
 
     private void initTaskQueues() {
 
@@ -65,32 +71,35 @@ public enum Module {
 
     }
 
-    public void createStage(long mapId, GCreateStage msg, GsSession gsSession) {
-
-    }
-
 
     public final void stop() {
         scheduledExecutor.shutdown();
         jobExecutor.shutdown();
     }
 
-    public void destroyMap(long mapId) {
-        GMap map = maps.remove(mapId);
-        if (map != null) {
-            map.safeStop();
+    public void addGMap(MapId mapId, GMap map) {
+        gMaps.put(mapId, map);
+        if  (gsConnected) {
+            syncMapInfo();
         }
     }
 
-    public void synDestroyMap(long mapId) {
-        GMap map = maps.remove(mapId);
-        if (map != null) {
-        }
-    }
-
-    public GMap getMap(long mapId) {
-        return maps.get(mapId);
-    }
+//    public void destroyMap(long mapId) {
+//        GMap map = maps.remove(mapId);
+//        if (map != null) {
+//            map.safeStop();
+//        }
+//    }
+//
+//    public void synDestroyMap(long mapId) {
+//        GMap map = maps.remove(mapId);
+//        if (map != null) {
+//        }
+//    }
+//
+//    public GMap getMap(long mapId) {
+//        return maps.get(mapId);
+//    }
 
     public final TaskQueue getTaskQueue(long mapId) {
         return taskQueues[(int)((mapId >> 16) & QUEUE_MASK)];
@@ -139,4 +148,15 @@ public enum Module {
         //Trace.debug("[sendToGs] {} : {}", p.getClass(), p);
         return gsSession.send(new MGMessage(mapId, ProtocolUtils.encode2Bytes(p)));
     }
+
+    @EventHandler
+    public void onGsConnected() {
+        gsConnected = true;
+        syncMapInfo();
+    }
+
+    public void syncMapInfo() {
+        
+    }
+
 }

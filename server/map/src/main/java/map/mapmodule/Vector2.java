@@ -26,9 +26,9 @@ public final class Vector2 {
         return new msg.map.Vector2(this.x, this.y);
     }
 
-    public static Vector2 fromCfg(cfg.map.Vector2 c) {
-        return new Vector2(c.x, c.y);
-    }
+//    public static Vector2 fromCfg(cfg.map.Vector2 c) {
+//        return new Vector2(c.x, c.y);
+//    }
 
     public Vector2 add(Vector2 vec){
         return new Vector2(this.x + vec.x, this.y + vec.y);

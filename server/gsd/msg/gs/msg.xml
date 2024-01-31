@@ -5,11 +5,13 @@
 	<include name="./gs.xml"/>
 	<include name="../serverlist/serverlist.xml"/>
 	<include name="../gsau/gsau.xml"/>
+	<include name="../map/map.xml"/>
 
 	<ref name="gsServer">
 		<ref name="plink"/>
 		<ref name="gs"/>
 		<ref name="map"/>
+		<ref name="gmap"/>
 		<ref name="serverlist"/>
 		<ref name="gsau"/>
 	</ref>

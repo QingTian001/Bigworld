@@ -46,30 +46,7 @@ public final class BootConfig {
 
         linkConf.parse(jo.getAsJsonObject("linkClient"));
         gsConf.parse(jo.getAsJsonObject("gsServer"));
-        metricsConf.parse(jo.getAsJsonObject("metrics"));
 
-//        NodeServer.start(jo.getAsJsonObject("kiteServer"), new INodeHandler() {
-//            @Override
-//            public boolean updateConfig(JsonObject jo) throws IOException {
-//                reloadConfig(jo);
-//                return true;
-//            }
-//
-//            @Override
-//            public int getServerId() {
-//                return serverId;
-//            }
-//
-//            @Override
-//            public int getUserOnline() {
-//                return 0;
-//            }
-//
-//            @Override
-//            public JsonObject getRawJsonConfig() {
-//                return readJson(jsonFile);
-//            }
-//        });
     }
 
     private JsonObject readJson(String jsonFile) {

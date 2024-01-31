@@ -8,6 +8,7 @@ import com.mafia.serverex.gmbase.common.Script;
 import com.mafia.serverex.metrics.MetricsHelper;
 import gs.net.aud.AudClient;
 import gs.net.link.LinkManager;
+import gs.net.map.MapIoManager;
 import gs.net.serverlist.ServerListManager;
 import pcore.db.Trace;
 import pcore.io.DynamicMultiClientManager;
@@ -21,6 +22,7 @@ public class BootConfig {
     private final gs.sysmodule.gm.Module.Conf gmConf = new gs.sysmodule.gm.Module.Conf();
     private final ServerListManager.ServerListConf serverListConf = new ServerListManager.ServerListConf();
     private final AudClient.Conf audConf = new AudClient.Conf();
+    private final MapIoManager.Conf mapConf = new MapIoManager.Conf();
     private final MetricsHelper.Conf metricsConf = new MetricsHelper.Conf();
     private int serverId;
     private int regionId;
@@ -63,6 +65,7 @@ public class BootConfig {
         }
 
         linkConf.parse(jo.getAsJsonObject("linkClient"));
+        mapConf.parse(jo.getAsJsonObject("mapClient"));
         gmConf.parse(jo.getAsJsonObject("gm"));
         dbConf.parse(jo.getAsJsonObject("db"));
         serverListConf.parse(jo.getAsJsonObject("serverList"));
@@ -155,7 +158,9 @@ public class BootConfig {
     public LinkManager.Conf getLinkConf() {
         return linkConf;
     }
-
+    public MapIoManager.Conf getMapConf() {
+        return mapConf;
+    }
 
     public gs.sysmodule.gm.Module.Conf getGmConf() {
         return gmConf;

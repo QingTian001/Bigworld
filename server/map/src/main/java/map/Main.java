@@ -1,11 +1,9 @@
 package map;
 
 import cfg.CfgMgr;
-import cfg.abtest.AbTest;
 import com.mafia.serverex.metrics.MetricsHelper;
 import map.cfg.BootConfig;
 import map.mapmodule.Module;
-import map.util.AbTestState;
 import org.apache.log4j.PropertyConfigurator;
 import pcore.db.Trace;
 
@@ -39,7 +37,6 @@ public class Main {
 
             CfgMgr.setDir(conf.getDataDir());
             CfgMgr.load();
-            AbTestState.loadCfg();
 
             map.net.Module.Ins.start();
             Module.Ins.start();

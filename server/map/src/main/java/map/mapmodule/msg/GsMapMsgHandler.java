@@ -20,15 +20,8 @@ public abstract class GsMapMsgHandler<T extends Protocol> extends GsMsgHandler<T
 
         GMap map = Module.Ins.getMap(mapId);
         if (map == null) {
-            if(p instanceof GCheckBattle) {
-                var respond = new MCheckBattle(false, false, -1L);
-                gsSession.send(new MGMessage(mapId, ProtocolUtils.encode2Bytes(respond)));
-            }else if(p instanceof GQuitStage){
-                var respond = new MQuitStage(-1,0);
-                gsSession.send(new MGMessage(mapId, ProtocolUtils.encode2Bytes(respond)));
-            }else {
+
                 Trace.warn("map not exists. mapId:{}", mapId);
-            }
             return;
         }
         try {

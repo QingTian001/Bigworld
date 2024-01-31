@@ -1,9 +1,7 @@
 package map.net.gs;
 
 import map.cfg.BootConfig;
-import map.util.AbTestState;
 import map.util.CfgReload;
-import msg.gmap.GAbTestStatesNotify;
 import msg.gmap.GCfgReload;
 import msg.net.GClientAnnouceServerInfo;
 import msg.net.GServerAnnouceServerInfo;
@@ -40,7 +38,6 @@ public class GsManager extends Server<GsSession> {
         super(conf);
         dispatcher.register(GClientAnnouceServerInfo.class, this::process);
         dispatcher.register(GCfgReload.class, this::process);
-        dispatcher.register(GAbTestStatesNotify.class, this::process);
 
     }
 
@@ -72,12 +69,6 @@ public class GsManager extends Server<GsSession> {
         CfgReload.getInstance().reload(p.version);
     }
 
-    private void process(GAbTestStatesNotify p) {
-
-        Int2ObjectHashMap<Integer> states = new Int2ObjectHashMap<>();
-        states.putAll(p.states);
-        AbTestState.setStates(states);
-    }
 
     public static class Conf extends Server.Conf {
 

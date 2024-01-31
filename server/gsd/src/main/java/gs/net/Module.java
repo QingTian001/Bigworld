@@ -4,6 +4,7 @@ package gs.net;
 import gs.net.aud.AudClient;
 import gs.net.link.LinkManager;
 
+import gs.net.map.MapIoManager;
 import gs.net.serverlist.ServerListManager;
 import pcore.collection.Int2ObjectHashMap;
 import gs.cfg.BootConfig;
@@ -20,6 +21,12 @@ public enum Module {
             LinkManager.Conf linkConf = conf.getLinkConf();
             linkConf.init(worker, new Int2ObjectHashMap<>(Refs.plink), LinkManager.getDispatcher());
             LinkManager.start(linkConf);
+        }
+
+        {
+            MapIoManager.Conf mapConf = conf.getMapConf();
+            mapConf.init(worker, new Int2ObjectHashMap<>(Refs.gmap), MapIoManager.getDispatcher());
+            MapIoManager.start(mapConf);
         }
 
 //        {

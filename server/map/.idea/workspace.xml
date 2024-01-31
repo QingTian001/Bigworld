@@ -5,89 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00243ebf-0657-4c39-b259-c26d49a873fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gsd/gsd.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../linkd/linkd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.iml" beforeDir="false" afterPath="$PROJECT_DIR$/map.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/cfg/BootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/graph" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/buff" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/EcsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/EcsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/ai" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/bullet" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/common" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/fight" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/transform/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/component/transform/Transform.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/ecs/system" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/entity/EntitySkillEnd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/AddBuffEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/AvoidanceEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/BossDamageEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/CastSkillEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/CountPointEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/DamageEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/DisperseEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/EntityDeathEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/EntityDestroyEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/HpChangeEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/HpOverflowEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/ImmuneControlEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/InvincibleRemovalEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/RemoveBuffEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/ReplaceActionGroupEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/ReviveEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/event/map/RoleEnterEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/grid" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/Block.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/ClimbTower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/Expedition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/GuildBoss.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/GuildDungeon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/HeroTrial.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/LimitedTower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/MainStory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/MultiTeamArena.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/OccupyMiningHigh.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/OccupyMiningLow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/SingleTeamArena.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/Stage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/TopArena.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/TowerCamp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/stage/WorldBoss.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/CBeginBattleRoundHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/CCastFinalSkillHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/CPauseHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/CSetAutoModeHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/CSetSpeedHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/CSkipBattleHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GBeginBattleHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GCheckBattleHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GCreateCrossBattleHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GCreateStageHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GDestroyStageHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GQuitStageHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GReLoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GReLoginHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/msg/handler/GReconnectBattleHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/skillcut" beforeDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/util/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/util/ConfigUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/util/MathUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/util/MathUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/util/ReflectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/util/ReflectionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/gs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/gs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../linkd/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="dc0b5120-c5cd-4532-b1c7-1bcd89a060ea" name="ignore-on-commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -324,13 +252,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "E:/work/Bigworld/server/map"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;D:/work/project/vtworld/stable_008&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.map [build]">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Map" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="map.Main" />
       <module name="map.main" />
       <method v="2">
@@ -360,7 +288,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Map" />
       <item itemvalue="Gradle.map [build]" />
     </list>
     <recent_temporary>
@@ -373,24 +301,6 @@
   <component name="SvnConfiguration" cleanupOnStartRun="true">
     <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
-  </component>
-  <component name="SvnFileUrlMappingImpl">
-    <option name="myMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\work\Bigworld\server\map" />
-          <option name="myCopyRoot" value="E:\work\Bigworld\server\map" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-    <option name="myMoreRealMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\work\Bigworld\server\map" />
-          <option name="myCopyRoot" value="E:\work\Bigworld\server\map" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

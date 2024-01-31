@@ -33,7 +33,6 @@ public final class CfgReload {
                 return;
             }
             CfgMgr.load();
-            AbTestState.loadCfg();
             this.version = version;
         } catch (Exception e) {
             throw new RuntimeException(e);

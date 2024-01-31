@@ -1,7 +1,5 @@
 package map.mapmodule.entity;
 
-import cfg.obj.*;
-import map.mapmodule.entity.component.Component;
 import map.mapmodule.map.GMap;
 
 import java.util.*;
@@ -12,19 +10,16 @@ public final class Entity {
     private final long id;
     private final static AtomicLong ID_GEN = new AtomicLong();
 
-    private final cfg.obj.Entity config;
     private final GMap map;
-    private final Map<Class<? extends Component>, Component<?>> allComponents = new HashMap<>();
 
 
-    public Entity(GMap map, cfg.obj.Entity config, long heroUid) {
+    public Entity(GMap map, long heroUid) {
         this.map = map;
-        this.config = config;
         this.id = ID_GEN.incrementAndGet();
     }
 
-    public Entity(GMap map, cfg.obj.Entity config) {
-        this(map, config, NOT_HERO_ID);
+    public Entity(GMap map) {
+        this(map, NOT_HERO_ID);
     }
 
     public long getId() {
@@ -35,9 +30,6 @@ public final class Entity {
         return map;
     }
 
-    public cfg.obj.Entity getConfig() {
-        return config;
-    }
 
 
 

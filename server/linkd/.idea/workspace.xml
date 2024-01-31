@@ -5,168 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad9d4c12-05c4-4163-92b5-313507bc8656" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/CfgMgr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/Extensions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/error/EErrorCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/localize/Localization.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/localize/LocalizeString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/login/LoginConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/login/LoginGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/login/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/CompleteDayTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/CompleteTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/CompleteWeekTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/DateRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/DateTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/DayRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/DayRanges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/DayTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/MultipleDayRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/MultipleWeekRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/OneDayRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/OneDayRanges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/OneDayTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/ServerStartTimeRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/Time.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/TimeRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/TimeRanges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/WeekRange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/WeekRanges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/cfg/cfg/time/WeekTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/Extensions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/Refs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/CPing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/SError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/SPong.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/CExecuteCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/CGetModuleList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/CommandInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/ModuleInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/ParamInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/SExecuteCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/gm/SGetModuleList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/login/RoleInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/login/SUserLogin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gs/login/SUserLoginSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/APullRecharge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/ARechargeOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/CheckState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/GPullRecharge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/GPullRechargeSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/GRechargeOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/GSwitchAvatarNotify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/GUserLogin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/GUserUpgradeNotify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/gsau/RechargeInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/net/EErrorCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/net/GClientAnnouceServerInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/net/GServerAnnouceServerInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GBind.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GBroadcast.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GForward.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GKickUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GMulticast.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GUnBind.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/GUserOnline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/LAnnounceOuterNetAddress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/LForward.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/LLinkBroken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/LUserKeepAlive.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/plink/LUserOnline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/CustomServiceMail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/ECustomServiceErrorCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SCancelSealAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SCreateAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SCustomMailDel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SCustomServiceForward.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SGameOperate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SGsMailDel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SMailSendRoles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SMailSendServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SPushGifts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SQueryRoleMail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SSealAcount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2SShowMarquee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/G2STest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GAddGsServerLinkInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GAnnouceGsServerInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GAnnouceGsServerStart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GAnnouceGsServerState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GAnnouceGsServerlocalId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GCloseStatistic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GOpenStatistic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GReload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GRmvGsServerLinkInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/GsServerState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/LinkInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailEntryInGM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendResultError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendResultNoError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendResultNormalError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendResultRoleNotExists.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendResultSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendRolesResultSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendServerResultNoSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/MailSendServerResultSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/NormalError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/PushGift.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/PushGiftError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/PushGiftsRet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/PushRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/QueryRoleMailResultSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/Result.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/ResultError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/ResultSuccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/RewardInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/RolesMail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GCancelSealAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GCustomMailDel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GCustomServiceForward.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GGameOperate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GGsMailDel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GMailSendRoles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GMailSendServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GPushGifts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GQueryRoleMail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GSealAcount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GShowMarquee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/S2GTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/SealAcountRet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/ServerMail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/SpecificLanguageMailInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/SpecificLanguageUrlInfos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/Success.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/msg/msg/serverlist/UnitUrlInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/AccountUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/Extensions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/RoleInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/ServerInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/TestBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/TestInnerBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/XLong.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xbean/XString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/AccountUsers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/RoleInfos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/RoleNameInfos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gen/xdb/xtable/_Tables_.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gsd/gs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/gs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/serverlist/ServerListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/serverlist/ServerListManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/sysmodule/server/ServerModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/sysmodule/server/ServerModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/link.json" beforeDir="false" afterPath="$PROJECT_DIR$/link.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/link/LinkServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/link/LinkServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../map/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/Extensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/gen/msg/msg/Extensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/Refs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/gen/msg/msg/Refs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/../map/map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/cfg/BootConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Vector2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Vector2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/entity/component/Component.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMapBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/msg/GsMapMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/msg/GsMapMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/msg/handler/GReLoginHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/gs/GsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/gs/GsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/util/AbTestState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/util/CfgReload.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/util/CfgReload.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,13 +67,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.linkd">
     <configuration name="linkd" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
