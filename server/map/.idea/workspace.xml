@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00243ebf-0657-4c39-b259-c26d49a873fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/gs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../linkd/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/msg/map/map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/map/map.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="dc0b5120-c5cd-4532-b1c7-1bcd89a060ea" name="ignore-on-commit" comment="" />

@@ -33,6 +33,16 @@
 			<var name="mapId" type="long"/>
 			<var name="data" type="bytes"/>
 		</proto>
+		
+		
+		<bean name="MapInfo">
+			<var name="x" type="int"/>
+			<var name="y" type="int"/>
+		</bean>
+		
+		<proto name="MGMapInfos">
+			<var name="mapInfos" type="list,MapInfo"/>
+		</proto>
 
 		
 		<!--其它-->

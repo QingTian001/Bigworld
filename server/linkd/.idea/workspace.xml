@@ -5,34 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad9d4c12-05c4-4163-92b5-313507bc8656" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/gs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/gs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/cfg/BootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/msg/map/map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/map/map.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../map/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/Extensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/gen/msg/msg/Extensions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/Refs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/gen/msg/msg/Refs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/../map/map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/cfg/BootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/cfg/BootConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Vector2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Vector2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/entity/component/Component.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMapBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/msg/GsMapMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/msg/GsMapMsgHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/msg/handler/GReLoginHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/gs/GsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/gs/GsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/util/AbTestState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/util/CfgReload.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/util/CfgReload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/MapId.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/MapId.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

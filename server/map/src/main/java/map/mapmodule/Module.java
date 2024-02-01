@@ -47,6 +47,8 @@ public enum Module {
     private volatile boolean gsConnected = false;
     public Map<MapId, GMap> gMaps = new ConcurrentHashMap<>();
 
+    public volatile GsSession gsSession;
+
     private void initTaskQueues() {
 
         Trace.info("init taskQueues");
@@ -80,7 +82,7 @@ public enum Module {
     public void addGMap(MapId mapId, GMap map) {
         gMaps.put(mapId, map);
         if  (gsConnected) {
-            syncMapInfo();
+            syncMapInfo(gsSession);
         }
     }
 
@@ -150,13 +152,19 @@ public enum Module {
     }
 
     @EventHandler
-    public void onGsConnected() {
-        gsConnected = true;
-        syncMapInfo();
+    public void onGsConnected(GsSession gsSession) {
+        this.gsConnected = true;
+        this.gsSession = gsSession;
+        syncMapInfo(gsSession);
     }
 
-    public void syncMapInfo() {
-        
+    public void syncMapInfo(GsSession gsSession) {
+        MGMapInfos p = new MGMapInfos();
+        for (MapId mapId : this.gMaps.keySet()) {
+            p.mapInfos.add(new MapInfo(mapId.x, mapId.y));
+        }
+        gsSession.send(p);
+
     }
 
 }
