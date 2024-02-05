@@ -88,10 +88,17 @@ public class GsManager extends Server<GsSession> {
             }
             MapServerInfo mapServerInfo = entry.getValue();
             if (mapServerInfos.putIfAbsent(entry.getKey(), mapServerInfo) == null) {
+                if (BootConfig.getIns().getLineId() < entry.getKey()) {
+                    pcore.io.Client.Conf conf = MapClientManager.getInst().getConf().createConf();
+                    conf.ip = mapServerInfo.serverIpPort.ip;
+                    conf.port = mapServerInfo.serverIpPort.port;
 
-
+                    MapClientManager.getInst().getConf().addConf(conf);
+                }
             }
         }
+
+        MapClientManager.getInst().updateServers();
 
     }
 

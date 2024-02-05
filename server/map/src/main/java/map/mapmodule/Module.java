@@ -99,9 +99,9 @@ public enum Module {
 //        }
 //    }
 //
-//    public GMap getMap(long mapId) {
-//        return maps.get(mapId);
-//    }
+    public GMap getMap(long mapId) {
+        return maps.get(mapId);
+    }
 
     public final TaskQueue getTaskQueue(long mapId) {
         return taskQueues[(int)((mapId >> 16) & QUEUE_MASK)];
