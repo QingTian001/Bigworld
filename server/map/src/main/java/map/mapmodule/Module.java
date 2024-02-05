@@ -160,8 +160,10 @@ public enum Module {
 
     public void syncMapInfo(GsSession gsSession) {
         MGMapInfos p = new MGMapInfos();
+        p.mapServerInfo.serverIpPort.ip = BootConfig.getIns().getMapServerConf().connectAddr;
+        p.mapServerInfo.serverIpPort.port = BootConfig.getIns().getMapServerConf().port;
         for (MapId mapId : this.gMaps.keySet()) {
-            p.mapInfos.add(new MapInfo(mapId.x, mapId.y));
+            p.mapServerInfo.mapInfos.add(new MapInfo(mapId.x, mapId.y));
         }
         gsSession.send(p);
 

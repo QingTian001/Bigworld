@@ -19,6 +19,7 @@
 		<ref name="plink"/>
 		<ref name="map"/>
 		<ref name="gmap"/>
+		<ref name="mmap"/>
 	</ref>
 	<ref name="client">
 		<ref name="gs"/>
@@ -33,6 +34,10 @@
 	</ref>
 	<ref name="gmap">
 		<module name="msg.gmap"/>
+		<module name="msg.net"/>
+	</ref>
+	<ref name="mmap">
+		<module name="msg.mmap"/>
 		<module name="msg.net"/>
 	</ref>
 	

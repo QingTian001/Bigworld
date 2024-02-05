@@ -9,6 +9,8 @@ public class Extensions {
                 return x.toString();
           } public static String tostring_msg_gmap_MGMessage(msg.gmap.MGMessage x) {
                 return x.toString();
+          } public static String tostring_msg_mmap_xnotify(msg.mmap.xnotify x) {
+                return x.toString();
           } public static String tostring_msg_gmap_GMMessage(msg.gmap.GMMessage x) {
                 return x.toString();
           } public static String tostring_msg_plink_GMulticast(msg.plink.GMulticast x) {
@@ -30,6 +32,8 @@ public class Extensions {
                 return x.toString();
           } public static String tostring_msg_map_Vector3(msg.map.Vector3 x) {
                 return x.toString();
+          } public static String tostring_msg_gmap_IpPort(msg.gmap.IpPort x) {
+                return x.toString();
           } public static String tostring_array_byte(byte[] x) {
                 StringBuilder _s = new StringBuilder(); _s.append('[');
                 for(var _e : x) {
@@ -39,6 +43,15 @@ public class Extensions {
                 return x.toString();
           } public static String tostring_msg_plink_LAnnounceOuterNetAddress(msg.plink.LAnnounceOuterNetAddress x) {
                 return x.toString();
+          } public static String tostring_msg_gmap_MapServerInfo(msg.gmap.MapServerInfo x) {
+                return x.toString();
+          } public static String tostring_msg_gmap_GMMapInfosNotify(msg.gmap.GMMapInfosNotify x) {
+                return x.toString();
+          } public static String tostring_map_int_msg_gmap_MapServerInfo(java.util.Map<Integer,msg.gmap.MapServerInfo> x) {
+                StringBuilder _s = new StringBuilder(); _s.append('[');
+                for(var _e : x.entrySet()) {
+                _s.append(_e.getKey()).append('=').append(msg.Extensions.tostring_msg_gmap_MapServerInfo(_e.getValue())).append(',');
+                }_s.append(']'); return _s.toString();
           } public static String tostring_msg_gmap_MapInfo(msg.gmap.MapInfo x) {
                 return x.toString();
           } public static String tostring_set_long(java.util.Set<Long> x) {
@@ -76,6 +89,8 @@ public class Extensions {
             x.marshal(os);
         } public static void marshal_msg_gmap_MGMessage(msg.gmap.MGMessage x, pcore.marshal.Octets os) {
             x.marshal(os);
+        } public static void marshal_msg_mmap_xnotify(msg.mmap.xnotify x, pcore.marshal.Octets os) {
+            x.marshal(os);
         } public static void marshal_msg_gmap_GMMessage(msg.gmap.GMMessage x, pcore.marshal.Octets os) {
             x.marshal(os);
         } public static void marshal_msg_plink_GMulticast(msg.plink.GMulticast x, pcore.marshal.Octets os) {
@@ -97,6 +112,8 @@ public class Extensions {
             x.marshal(os);
         } public static void marshal_msg_map_Vector3(msg.map.Vector3 x, pcore.marshal.Octets os) {
             x.marshal(os);
+        } public static void marshal_msg_gmap_IpPort(msg.gmap.IpPort x, pcore.marshal.Octets os) {
+            x.marshal(os);
         } public static void marshal_array_byte(byte[] x, pcore.marshal.Octets os) {
             os.writeSize(x.length);
             for(var _e : x) {
@@ -106,6 +123,16 @@ public class Extensions {
             x.marshal(os);
         } public static void marshal_msg_plink_LAnnounceOuterNetAddress(msg.plink.LAnnounceOuterNetAddress x, pcore.marshal.Octets os) {
             x.marshal(os);
+        } public static void marshal_msg_gmap_MapServerInfo(msg.gmap.MapServerInfo x, pcore.marshal.Octets os) {
+            x.marshal(os);
+        } public static void marshal_msg_gmap_GMMapInfosNotify(msg.gmap.GMMapInfosNotify x, pcore.marshal.Octets os) {
+            x.marshal(os);
+        } public static void marshal_map_int_msg_gmap_MapServerInfo(java.util.Map<Integer,msg.gmap.MapServerInfo> x, pcore.marshal.Octets os) {
+            os.writeSize(x.size());
+            for(var _e : x.entrySet()) {
+            os.writeInt(_e.getKey());
+            msg.Extensions.marshal_msg_gmap_MapServerInfo(_e.getValue(),os);
+            }
         } public static void marshal_msg_gmap_MapInfo(msg.gmap.MapInfo x, pcore.marshal.Octets os) {
             x.marshal(os);
         } public static void marshal_set_long(java.util.Set<Long> x, pcore.marshal.Octets os) {
@@ -143,6 +170,8 @@ public class Extensions {
             var x = new msg.plink.GForward(); x.unmarshal(os); return x;
         } public static msg.gmap.MGMessage unmarshal_msg_gmap_MGMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.MGMessage(); x.unmarshal(os); return x;
+        } public static msg.mmap.xnotify unmarshal_msg_mmap_xnotify(pcore.marshal.Octets os) {
+            var x = new msg.mmap.xnotify(); x.unmarshal(os); return x;
         } public static msg.gmap.GMMessage unmarshal_msg_gmap_GMMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.GMMessage(); x.unmarshal(os); return x;
         } public static msg.plink.GMulticast unmarshal_msg_plink_GMulticast(pcore.marshal.Octets os) {
@@ -165,6 +194,8 @@ public class Extensions {
             var x = new msg.map.Vector2(); x.unmarshal(os); return x;
         } public static msg.map.Vector3 unmarshal_msg_map_Vector3(pcore.marshal.Octets os) {
             var x = new msg.map.Vector3(); x.unmarshal(os); return x;
+        } public static msg.gmap.IpPort unmarshal_msg_gmap_IpPort(pcore.marshal.Octets os) {
+            var x = new msg.gmap.IpPort(); x.unmarshal(os); return x;
         } public static byte[] unmarshal_array_byte(pcore.marshal.Octets os) {
             var n = Math.min(os.readSize(), os.size() + 1);
             var x = new byte[n];
@@ -175,6 +206,16 @@ public class Extensions {
             var x = new msg.gmap.MGMapInfos(); x.unmarshal(os); return x;
         } public static msg.plink.LAnnounceOuterNetAddress unmarshal_msg_plink_LAnnounceOuterNetAddress(pcore.marshal.Octets os) {
             var x = new msg.plink.LAnnounceOuterNetAddress(); x.unmarshal(os); return x;
+        } public static msg.gmap.MapServerInfo unmarshal_msg_gmap_MapServerInfo(pcore.marshal.Octets os) {
+            var x = new msg.gmap.MapServerInfo(); x.unmarshal(os); return x;
+        } public static msg.gmap.GMMapInfosNotify unmarshal_msg_gmap_GMMapInfosNotify(pcore.marshal.Octets os) {
+            var x = new msg.gmap.GMMapInfosNotify(); x.unmarshal(os); return x;
+        } public static java.util.Map<Integer,msg.gmap.MapServerInfo> unmarshal_map_int_msg_gmap_MapServerInfo(pcore.marshal.Octets os) {
+            var n = Math.min(os.readSize(), os.size() + 1);
+            java.util.Map<Integer,msg.gmap.MapServerInfo> x = pcore.collection.Factory.newMap(n);
+            for(int i = 0 ; i < n ; i++) {
+            x.put(os.readInt(), msg.Extensions.unmarshal_msg_gmap_MapServerInfo(os));
+            }return x;
         } public static msg.gmap.MapInfo unmarshal_msg_gmap_MapInfo(pcore.marshal.Octets os) {
             var x = new msg.gmap.MapInfo(); x.unmarshal(os); return x;
         } public static java.util.Set<Long> unmarshal_set_long(pcore.marshal.Octets os) {
@@ -214,6 +255,8 @@ public class Extensions {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_gmap_MGMessage(msg.gmap.MGMessage x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
+        } public static void marshal_compatible_msg_mmap_xnotify(msg.mmap.xnotify x, pcore.marshal.Octets os) {
+            x.marshalCompatible(os);
         } public static void marshal_compatible_msg_gmap_GMMessage(msg.gmap.GMMessage x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_plink_GMulticast(msg.plink.GMulticast x, pcore.marshal.Octets os) {
@@ -235,6 +278,8 @@ public class Extensions {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_map_Vector3(msg.map.Vector3 x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
+        } public static void marshal_compatible_msg_gmap_IpPort(msg.gmap.IpPort x, pcore.marshal.Octets os) {
+            x.marshalCompatible(os);
         } public static void marshal_compatible_array_byte(byte[] x, pcore.marshal.Octets os) {
             os.writeSize(x.length);
             for(var _e : x) {
@@ -244,6 +289,16 @@ public class Extensions {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_plink_LAnnounceOuterNetAddress(msg.plink.LAnnounceOuterNetAddress x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
+        } public static void marshal_compatible_msg_gmap_MapServerInfo(msg.gmap.MapServerInfo x, pcore.marshal.Octets os) {
+            x.marshalCompatible(os);
+        } public static void marshal_compatible_msg_gmap_GMMapInfosNotify(msg.gmap.GMMapInfosNotify x, pcore.marshal.Octets os) {
+            x.marshalCompatible(os);
+        } public static void marshal_compatible_map_int_msg_gmap_MapServerInfo(java.util.Map<Integer,msg.gmap.MapServerInfo> x, pcore.marshal.Octets os) {
+            os.writeSize(x.size());
+            for(var _e : x.entrySet()) {
+            os.writeInt(_e.getKey());
+            msg.Extensions.marshal_compatible_msg_gmap_MapServerInfo(_e.getValue(),os);
+            }
         } public static void marshal_compatible_msg_gmap_MapInfo(msg.gmap.MapInfo x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
         } public static void marshal_compatible_set_long(java.util.Set<Long> x, pcore.marshal.Octets os) {
@@ -281,6 +336,8 @@ public class Extensions {
             var x = new msg.plink.GForward(); x.unmarshalCompatible(os); return x;
         } public static msg.gmap.MGMessage unmarshal_compatible_msg_gmap_MGMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.MGMessage(); x.unmarshalCompatible(os); return x;
+        } public static msg.mmap.xnotify unmarshal_compatible_msg_mmap_xnotify(pcore.marshal.Octets os) {
+            var x = new msg.mmap.xnotify(); x.unmarshalCompatible(os); return x;
         } public static msg.gmap.GMMessage unmarshal_compatible_msg_gmap_GMMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.GMMessage(); x.unmarshalCompatible(os); return x;
         } public static msg.plink.GMulticast unmarshal_compatible_msg_plink_GMulticast(pcore.marshal.Octets os) {
@@ -303,6 +360,8 @@ public class Extensions {
             var x = new msg.map.Vector2(); x.unmarshalCompatible(os); return x;
         } public static msg.map.Vector3 unmarshal_compatible_msg_map_Vector3(pcore.marshal.Octets os) {
             var x = new msg.map.Vector3(); x.unmarshalCompatible(os); return x;
+        } public static msg.gmap.IpPort unmarshal_compatible_msg_gmap_IpPort(pcore.marshal.Octets os) {
+            var x = new msg.gmap.IpPort(); x.unmarshalCompatible(os); return x;
         } public static byte[] unmarshal_compatible_array_byte(pcore.marshal.Octets os) {
             var n = Math.min(os.readSize(), os.size() + 1);
             var x = new byte[n];
@@ -313,6 +372,16 @@ public class Extensions {
             var x = new msg.gmap.MGMapInfos(); x.unmarshalCompatible(os); return x;
         } public static msg.plink.LAnnounceOuterNetAddress unmarshal_compatible_msg_plink_LAnnounceOuterNetAddress(pcore.marshal.Octets os) {
             var x = new msg.plink.LAnnounceOuterNetAddress(); x.unmarshalCompatible(os); return x;
+        } public static msg.gmap.MapServerInfo unmarshal_compatible_msg_gmap_MapServerInfo(pcore.marshal.Octets os) {
+            var x = new msg.gmap.MapServerInfo(); x.unmarshalCompatible(os); return x;
+        } public static msg.gmap.GMMapInfosNotify unmarshal_compatible_msg_gmap_GMMapInfosNotify(pcore.marshal.Octets os) {
+            var x = new msg.gmap.GMMapInfosNotify(); x.unmarshalCompatible(os); return x;
+        } public static java.util.Map<Integer,msg.gmap.MapServerInfo> unmarshal_compatible_map_int_msg_gmap_MapServerInfo(pcore.marshal.Octets os) {
+            var n = Math.min(os.readSize(), os.size() + 1);
+            java.util.Map<Integer,msg.gmap.MapServerInfo> x = pcore.collection.Factory.newMap(n);
+            for(int i = 0 ; i < n ; i++) {
+            x.put(os.readInt(), msg.Extensions.unmarshal_compatible_msg_gmap_MapServerInfo(os));
+            }return x;
         } public static msg.gmap.MapInfo unmarshal_compatible_msg_gmap_MapInfo(pcore.marshal.Octets os) {
             var x = new msg.gmap.MapInfo(); x.unmarshalCompatible(os); return x;
         } public static java.util.Set<Long> unmarshal_compatible_set_long(pcore.marshal.Octets os) {

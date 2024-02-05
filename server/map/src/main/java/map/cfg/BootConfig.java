@@ -8,6 +8,7 @@ import map.net.gs.GsManager;
 import map.net.link.LinkManager;
 import kite.node.INodeHandler;
 import kite.node.NodeServer;
+import map.net.map.server.MapServerManager;
 import pcore.io.DynamicMultiClientManager;
 
 import java.io.*;
@@ -20,12 +21,16 @@ public final class BootConfig {
     private static final BootConfig ins = new BootConfig();
     private final LinkManager.Conf linkConf = new LinkManager.Conf();
     private final GsManager.Conf gsConf = new GsManager.Conf();
+
+    private final MapServerManager.Conf mapServerConf = new MapServerManager.Conf();
     private final MetricsHelper.Conf metricsConf = new MetricsHelper.Conf();
 
     private int serverId;
     private String dataDir;
     private String jsonFile;
     private String log4jFile;
+
+    private int lineId;
     private boolean debug;
 
     public static BootConfig getIns() {
@@ -37,6 +42,8 @@ public final class BootConfig {
         var jo = readJson(jsonFile);
 
         serverId = jo.get("serverId").getAsInt();
+
+        lineId = jo.get("lineId").getAsInt();
         dataDir = jo.get("dataDir").getAsString();
         log4jFile = jo.get("log4jFile").getAsString();
 
@@ -46,6 +53,8 @@ public final class BootConfig {
 
         linkConf.parse(jo.getAsJsonObject("linkClient"));
         gsConf.parse(jo.getAsJsonObject("gsServer"));
+
+        mapServerConf.parse(jo.getAsJsonObject("mapServer"));
 
     }
 
@@ -91,6 +100,9 @@ public final class BootConfig {
     public int getServerId() {
         return serverId;
     }
+    public int getLineId() {
+        return lineId;
+    }
 
     public String getDataDir() {
         return dataDir;
@@ -112,8 +124,8 @@ public final class BootConfig {
         return gsConf;
     }
 
-    public MetricsHelper.Conf getMetricsConf() {
-        return metricsConf;
+    public MapServerManager.Conf getMapServerConf() {
+        return mapServerConf;
     }
 
 }

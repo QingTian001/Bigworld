@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00243ebf-0657-4c39-b259-c26d49a873fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/gs/msg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gsd/msg/map/map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/map/map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/src/main/java/gs/net/map/MapIoManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../linkd/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="dc0b5120-c5cd-4532-b1c7-1bcd89a060ea" name="ignore-on-commit" comment="" />
@@ -245,9 +248,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;D:/work/project/vtworld/stable_008&quot;
+    &quot;last_opened_file_path&quot;: &quot;E:/work/Bigworld/server/map/src/main/java/map/net/map/client&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\work\Bigworld\server\map\src\main\java\map\net\map\client" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="map.net.map.client" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.map [build]">
     <configuration name="Map" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="map.Main" />

@@ -8,15 +8,15 @@ public final class MGMapInfos extends pcore.io.Protocol{
         return TYPE_ID;
     }
 
-    public java.util.List<msg.gmap.MapInfo> mapInfos;
+    public msg.gmap.MapServerInfo mapServerInfo;
 
     public MGMapInfos() {
-         this.mapInfos = pcore.collection.Factory.newList();
+         this.mapServerInfo = new msg.gmap.MapServerInfo();
 
     }
 
-    public MGMapInfos(java.util.List<msg.gmap.MapInfo> mapInfos ) {
-        this.mapInfos = mapInfos;
+    public MGMapInfos(msg.gmap.MapServerInfo mapServerInfo ) {
+        this.mapServerInfo = mapServerInfo;
          
     }
 
@@ -30,7 +30,7 @@ public final class MGMapInfos extends pcore.io.Protocol{
          _sb_.append("]");
          
         _sb_.append("{");
-        _sb_.append("mapInfos").append(':').append(msg.Extensions.tostring_list_msg_gmap_MapInfo(mapInfos)).append(',');
+        _sb_.append("mapServerInfo").append(':').append(msg.Extensions.tostring_msg_gmap_MapServerInfo(mapServerInfo)).append(',');
 
         _sb_.append("}");
         return _sb_.toString();
@@ -38,13 +38,13 @@ public final class MGMapInfos extends pcore.io.Protocol{
 
     @Override
     public void marshal(pcore.marshal.Octets os) {
-        msg.Extensions.marshal_list_msg_gmap_MapInfo(mapInfos,os);
+        msg.Extensions.marshal_msg_gmap_MapServerInfo(mapServerInfo,os);
 
     }
 
     @Override
     public void unmarshal(pcore.marshal.Octets os) {
-        mapInfos = msg.Extensions.unmarshal_list_msg_gmap_MapInfo(os);
+        mapServerInfo = msg.Extensions.unmarshal_msg_gmap_MapServerInfo(os);
 
     }
 }

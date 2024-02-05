@@ -2,12 +2,18 @@ package gs.net.map;
 
 import com.google.gson.JsonObject;
 import gs.cfg.BootConfig;
-import msg.gmap.MGMessage;
+import msg.gmap.*;
 import msg.net.GClientAnnouceServerInfo;
 import msg.net.GServerAnnouceServerInfo;
 import pcore.collection.Int2ObjectHashMap;
 import pcore.collection.IntList;
 import pcore.io.*;
+
+import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
 
 /**
  * Created by zyao on 2020/3/21 17:49
@@ -17,6 +23,25 @@ public class MapIoManager extends DynamicMultiClientManager {
     private static ProtocolDispatcher dispatcher = new ProtocolDispatcher();
     private final Conf conf;
     private final Int2ObjectHashMap<MapIo> lineId2MapIos = new Int2ObjectHashMap<>();
+
+    private final Map<MapIo, Integer> mapIo2LineIdMap = new HashMap<>();
+
+    public static class MapId {
+        public final int x;
+        public final int y;
+
+        public MapId(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public MapId(MapInfo mapInfo) {
+            this.x = mapInfo.x;
+            this.y = mapInfo.y;
+        }
+    }
+
+    private final Map<Integer, MapServerInfo> lineId2MapServerInfo = new ConcurrentHashMap<>();
 
     public static MapIoManager getInst() {
         return inst;
@@ -33,6 +58,7 @@ public class MapIoManager extends DynamicMultiClientManager {
         this.conf = conf;
         dispatcher.register(GServerAnnouceServerInfo.class, this::process);
         dispatcher.register(MGMessage.class, this::process);
+        dispatcher.register(MGMapInfos.class, this::process);
     }
 
     protected DynamicClient newClient(String name, Client.Conf config) {
@@ -46,6 +72,7 @@ public class MapIoManager extends DynamicMultiClientManager {
         client.send(p);
         MapConf mapConf = (MapConf)client.getConf();
         lineId2MapIos.put(mapConf.lineId, (MapIo)client);
+        mapIo2LineIdMap.put((MapIo)client, mapConf.lineId);
     }
 
     @Override
@@ -71,6 +98,20 @@ public class MapIoManager extends DynamicMultiClientManager {
         long mapId = p.mapId;
         Protocol msg = ProtocolUtils.decodeFromBytes(p.data, conf.getStubs());
         //new MapProtocolReceive(mapId, msg).trigger();
+    }
+
+    private void process(MGMapInfos p) {
+        MapIo io = (MapIo)((MapIoSession)p.getContext()).getConnection().getManager();
+
+        List<MapId> mapIds = new ArrayList<>();
+        lineId2MapServerInfo.put(mapIo2LineIdMap.get(io), p.mapServerInfo);
+
+        GMMapInfosNotify notify = new GMMapInfosNotify();
+        notify.mapServerInfos.putAll(lineId2MapServerInfo);
+
+        for (DynamicClient manager : this.getServers().values()) {
+            manager.send(notify);
+        }
     }
 
     public static class Conf extends DynamicMultiClientManager.Conf {

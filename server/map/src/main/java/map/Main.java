@@ -40,7 +40,6 @@ public class Main {
 
             map.net.Module.Ins.start();
             Module.Ins.start();
-            MetricsHelper.start(BootConfig.getIns().getMetricsConf());
 
             Trace.info("map server started");
         }

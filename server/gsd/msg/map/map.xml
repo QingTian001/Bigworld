@@ -23,6 +23,13 @@
 		</proto>
 	</module>
 	
+	<module name="mmap">
+		<proto name="xnotify"> 
+			<var name="mapId" type="long"/>
+			<var name="data" type="bytes"/>
+		</proto>
+	</module>
+	
 	<module name="gmap">
 		<proto name="GMMessage"> gs发给map的协议外层包装
 			<var name="mapId" type="long"/>
@@ -34,14 +41,27 @@
 			<var name="data" type="bytes"/>
 		</proto>
 		
+		<bean name="IpPort">
+			<var name="ip" type="string"/>
+			<var name="port" type="int"/>
+		</bean>
 		
 		<bean name="MapInfo">
 			<var name="x" type="int"/>
 			<var name="y" type="int"/>
 		</bean>
 		
-		<proto name="MGMapInfos">
+		<bean name="MapServerInfo">
 			<var name="mapInfos" type="list,MapInfo"/>
+			<var name="serverIpPort" type="IpPort"/>
+		</bean>
+		
+		<proto name="MGMapInfos">
+			<var name="mapServerInfo" type="MapServerInfo"/>
+		</proto>
+		
+		<proto name="GMMapInfosNotify">
+			<var name="mapServerInfos" type="map,int,MapServerInfo"/>
 		</proto>
 
 		
