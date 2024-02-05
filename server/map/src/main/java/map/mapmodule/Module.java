@@ -1,6 +1,7 @@
 package map.mapmodule;
 
 import map.cfg.BootConfig;
+import map.event.GsConnectedEvent;
 import map.mapmodule.map.GMap;
 import map.mapmodule.map.MapId;
 import map.mapmodule.msg.GsMsgContext;
@@ -25,12 +26,13 @@ import pcore.event.EventHandler;
 import pcore.io.IProtocolFactory;
 import pcore.io.Protocol;
 import pcore.io.ProtocolUtils;
+import pcore.misc.IModule;
 import pcore.misc.TaskQueue;
 
 import java.util.concurrent.*;
 import java.util.*;
 
-public enum Module {
+public enum Module implements IModule {
     Ins;
 
     private ExecutorService jobExecutor = Executors.newFixedThreadPool(Math.max(16, Runtime.getRuntime().availableProcessors() * 2));
@@ -152,9 +154,9 @@ public enum Module {
     }
 
     @EventHandler
-    public void onGsConnected(GsSession gsSession) {
+    public void onGsConnected(GsConnectedEvent event) {
         this.gsConnected = true;
-        this.gsSession = gsSession;
+        this.gsSession = event.gsSession;
         syncMapInfo(gsSession);
     }
 

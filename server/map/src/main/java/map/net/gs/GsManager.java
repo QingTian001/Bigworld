@@ -1,6 +1,8 @@
 package map.net.gs;
 
 import map.cfg.BootConfig;
+import map.event.GsConnectedEvent;
+import map.mapmodule.event.EventManager;
 import map.net.link.LinkManager;
 import map.net.map.client.MapClient;
 import map.net.map.client.MapClientManager;
@@ -75,6 +77,8 @@ public class GsManager extends Server<GsSession> {
 
     private void process(GClientAnnouceServerInfo p) {
         register(p.serverId, (GsSession)p.getContext());
+
+        new GsConnectedEvent((GsSession)p.getContext()).trigger();
     }
 
     private void process(GCfgReload p) {
@@ -92,7 +96,7 @@ public class GsManager extends Server<GsSession> {
                     pcore.io.Client.Conf conf = MapClientManager.getInst().getConf().createConf();
                     conf.ip = mapServerInfo.serverIpPort.ip;
                     conf.port = mapServerInfo.serverIpPort.port;
-
+                    MapClientManager.getInst().getConf().initConf(conf);
                     MapClientManager.getInst().getConf().addConf(conf);
                 }
             }

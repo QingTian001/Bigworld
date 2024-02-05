@@ -4,6 +4,7 @@ import cfg.CfgMgr;
 import com.mafia.serverex.metrics.MetricsHelper;
 import map.cfg.BootConfig;
 import map.mapmodule.Module;
+import map.util.ReflectionUtil;
 import org.apache.log4j.PropertyConfigurator;
 import pcore.db.Trace;
 
@@ -38,8 +39,9 @@ public class Main {
             CfgMgr.setDir(conf.getDataDir());
             CfgMgr.load();
 
+            ReflectionUtil.registerAndStartModules("map.mapmodule");
             map.net.Module.Ins.start();
-            Module.Ins.start();
+            //Module.Ins.start();
 
             Trace.info("map server started");
         }
