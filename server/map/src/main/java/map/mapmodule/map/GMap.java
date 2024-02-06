@@ -1,5 +1,6 @@
 package map.mapmodule.map;
 
+import map.mapmodule.Module;
 import map.mapmodule.event.EntityListener;
 import map.mapmodule.event.Event;
 import map.mapmodule.event.EventManager;
@@ -19,27 +20,32 @@ public abstract class GMap {
     protected long id;
 
     protected static final AtomicLong ID_GEN = new AtomicLong();
-    private TaskQueue taskQueue;
-    protected ScheduledExecutorService scheduledExecutor;
+    private TaskQueue taskQueue = new TaskQueue(Module.Ins.jobExecutor);
+    protected ScheduledExecutorService scheduledExecutor = Module.Ins.scheduledExecutor;
     private ScheduledFuture<?> future;
-    private ScheduledFuture<?> timeOutFuture;
     private final EventManager eventManager = new EventManager();
     private final HashSet<DelayTask> delayTasks = new HashSet<>();
 
+    private final MapId mapId;
 
-    public GMap() {
+    public GMap(MapBuilder builder) {
         id = ID_GEN.incrementAndGet();
+        this.mapId = builder.mapId;
     }
 
-    public long getId() {
+    public long getInstId() {
         return id;
     }
 
-    private void scheduleUpdate(int delay) {
+    public MapId getMapId() {
+        return mapId;
+    }
+
+    private void scheduleUpdate() {
         if (future != null) {
             future.cancel(false);
         }
-        future = scheduledExecutor.scheduleAtFixedRate(this::safeUpdate, delay, delay, TimeUnit.MILLISECONDS);
+        future = scheduledExecutor.scheduleAtFixedRate(this::safeUpdate, GMap.frameInterval, GMap.frameInterval, TimeUnit.MILLISECONDS);
     }
 
     protected void update() {
@@ -47,13 +53,16 @@ public abstract class GMap {
 
     }
 
+    public TaskQueue getTaskQueue() {
+        return taskQueue;
+    }
 
     public final void safeExecute(Runnable runnable) {
         taskQueue.add(runnable);
     }
 
     private void start() {
-
+        scheduleUpdate();
     }
 
     protected final void safeStart() {
@@ -66,7 +75,7 @@ public abstract class GMap {
 
 
     public final void stop() {
-
+        future.cancel(true);
     }
 
     private void safeUpdate() {

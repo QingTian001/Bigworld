@@ -56,7 +56,7 @@ public class Role {
     }
 
     public final void sendToGs(Protocol p) {
-        Module.Ins.sendToGs(gsSession, map.getId(), p);
+        Module.Ins.sendToGs(gsSession, map.getInstId(), p);
     }
 
     public synchronized void enterMap(int linkServerId, long linkSid, GsSession gsSession) {

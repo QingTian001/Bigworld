@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad9d4c12-05c4-4163-92b5-313507bc8656" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../map/map2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/MapBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/MapSizeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/aoi/AoiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/aoi/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/aoi/Grid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/aoi/GridEntities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/aoi/GridFake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/aoi/GridReal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../map/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/map/client/MapClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/map/client/MapClientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

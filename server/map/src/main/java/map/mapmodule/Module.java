@@ -35,15 +35,14 @@ import java.util.*;
 public enum Module implements IModule {
     Ins;
 
-    private ExecutorService jobExecutor = Executors.newFixedThreadPool(Math.max(16, Runtime.getRuntime().availableProcessors() * 2));
-    private final ScheduledExecutorService scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
+    public ExecutorService jobExecutor = Executors.newFixedThreadPool(Math.max(16, Runtime.getRuntime().availableProcessors() * 2));
+    public final ScheduledExecutorService scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
     private final ScheduledExecutorService timeoutExecutor = Executors.newSingleThreadScheduledExecutor();
     private final LongConcurrentHashMap<GMap> maps = new LongConcurrentHashMap<>();
 
     private final Int2ObjectHashMap<IProtocolFactory> stubs = new Int2ObjectHashMap<>();
     private final int QUEUE_LENGTH = MathUtil.nextPowerOfTwo(Math.max(16, Runtime.getRuntime().availableProcessors() * 2));
     private final int QUEUE_MASK = QUEUE_LENGTH - 1;
-    private final TaskQueue[] taskQueues = new TaskQueue[QUEUE_LENGTH];
     private final ConcurrentHashMap<LsId, Role> lsId2RoleMap = new ConcurrentHashMap<>();
 
     private volatile boolean gsConnected = false;
@@ -51,19 +50,13 @@ public enum Module implements IModule {
 
     public volatile GsSession gsSession;
 
-    private void initTaskQueues() {
 
-        Trace.info("init taskQueues");
-        for (int i = 0; i < taskQueues.length; ++i) {
-            taskQueues[i] = new TaskQueue(jobExecutor);
-        }
-    }
 
     public void start() {
         if(BootConfig.getIns().isDebug()){
             jobExecutor = Executors.newSingleThreadExecutor();
         }
-        initTaskQueues();
+
         stubs.putAll(Refs.mapServer);
         GsManager.getDispatcher().register(GMMessage.class, this::process);
         LinkManager.getDispatcher().register(LForward.class, this::process);
@@ -106,7 +99,7 @@ public enum Module implements IModule {
     }
 
     public final TaskQueue getTaskQueue(long mapId) {
-        return taskQueues[(int)((mapId >> 16) & QUEUE_MASK)];
+        return getMap(mapId).getTaskQueue();
     }
 
     public final Role getRole(LinkSession linkSession, long linkSid) {

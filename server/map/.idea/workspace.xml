@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="212102fe-1c14-46de-9ea1-ccd200fffbcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/map2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/MapBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/MapSizeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/AoiManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/Grid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridEntities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridFake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridReal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/net/map/client/MapClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/net/map/client/MapClientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/role/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/role/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +46,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -53,6 +71,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="map.mapmodule.map.aoi" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.map2">
     <configuration name="map" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
@@ -146,7 +169,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java</url>
-          <line>159</line>
+          <line>152</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -158,11 +181,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/map/net/gs/GsManager.java</url>
           <line>115</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/map/net/map/client/MapClientManager.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/map/net/map/server/MapServerManager.java</url>
