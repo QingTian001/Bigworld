@@ -66,8 +66,9 @@ public class MapClientManager extends DynamicMultiClientManager {
         GClientAnnouceServerInfo p = new GClientAnnouceServerInfo(BootConfig.getIns().getServerId());
         client.send(p);
 
+        // 向server端通知自己的lineId
         MCLineIdNotify lineIdNotify = new MCLineIdNotify();
-        lineIdNotify.lineId = ((ClientConf)client.getConf()).lineId;
+        lineIdNotify.lineId = BootConfig.getIns().getLineId(); // 通知自己的lineId
         client.send(lineIdNotify);
     }
 
@@ -86,6 +87,7 @@ public class MapClientManager extends DynamicMultiClientManager {
         MapClient client = (MapClient)((Session)p.getContext()).getConnection().getManager();
         ClientConf conf = (ClientConf)client.getConf();
 
+        // 将服务器的lineId和服务器的serverId做绑定
         lineId2ServerId.put(conf.lineId, p.serverId);
 
     }

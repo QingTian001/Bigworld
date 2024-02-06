@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad9d4c12-05c4-4163-92b5-313507bc8656" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../gsd/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gsd/msg/map/map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gsd/msg/map/map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../map/map2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../map/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../map/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../map/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/Extensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/gen/msg/msg/Extensions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/Refs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/gen/msg/msg/Refs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/gen/msg/msg/mmap/xnotify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/gs/GsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/gs/GsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/map/client/MapClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/map/client/MapClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/map/server/MapServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/map/server/MapServerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../map/src/main/java/map/net/map/util.java" beforeDir="false" afterPath="$PROJECT_DIR$/../map/src/main/java/map/net/map/util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
