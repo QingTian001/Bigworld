@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="212102fe-1c14-46de-9ea1-ccd200fffbcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/MapBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/MapSizeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/AoiManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/Grid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridEntities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridFake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridReal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../linkd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/role/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/role/Role.java" afterDir="false" />
-    </list>
+    <list default="true" id="212102fe-1c14-46de-9ea1-ccd200fffbcf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
