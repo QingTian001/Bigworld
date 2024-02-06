@@ -34,8 +34,8 @@ public final class Refs {
           plink.put(msg.plink.GBind.TYPE_ID, msg.plink.GBind::new); 
           
        mmap.put(msg.net.GServerAnnouceServerInfo.TYPE_ID, msg.net.GServerAnnouceServerInfo::new); 
-          mmap.put(msg.mmap.xnotify.TYPE_ID, msg.mmap.xnotify::new); 
           mmap.put(msg.net.GClientAnnouceServerInfo.TYPE_ID, msg.net.GClientAnnouceServerInfo::new); 
+          mmap.put(msg.mmap.MCLineIdNotify.TYPE_ID, msg.mmap.MCLineIdNotify::new); 
           
        map.put(msg.map.SMapDebugInfo.TYPE_ID, msg.map.SMapDebugInfo::new); 
           map.put(msg.map.SDebugException.TYPE_ID, msg.map.SDebugException::new); 
@@ -44,13 +44,13 @@ public final class Refs {
           mapServer.put(msg.plink.LForward.TYPE_ID, msg.plink.LForward::new); 
           mapServer.put(msg.plink.GForward.TYPE_ID, msg.plink.GForward::new); 
           mapServer.put(msg.gmap.MGMessage.TYPE_ID, msg.gmap.MGMessage::new); 
-          mapServer.put(msg.mmap.xnotify.TYPE_ID, msg.mmap.xnotify::new); 
           mapServer.put(msg.gmap.GMMessage.TYPE_ID, msg.gmap.GMMessage::new); 
           mapServer.put(msg.plink.GMulticast.TYPE_ID, msg.plink.GMulticast::new); 
           mapServer.put(msg.plink.GKickUser.TYPE_ID, msg.plink.GKickUser::new); 
           mapServer.put(msg.map.SDebugException.TYPE_ID, msg.map.SDebugException::new); 
           mapServer.put(msg.plink.GUserOnline.TYPE_ID, msg.plink.GUserOnline::new); 
           mapServer.put(msg.net.GServerAnnouceServerInfo.TYPE_ID, msg.net.GServerAnnouceServerInfo::new); 
+          mapServer.put(msg.mmap.MCLineIdNotify.TYPE_ID, msg.mmap.MCLineIdNotify::new); 
           mapServer.put(msg.gmap.MGMapInfos.TYPE_ID, msg.gmap.MGMapInfos::new); 
           mapServer.put(msg.plink.LAnnounceOuterNetAddress.TYPE_ID, msg.plink.LAnnounceOuterNetAddress::new); 
           mapServer.put(msg.gmap.GMMapInfosNotify.TYPE_ID, msg.gmap.GMMapInfosNotify::new); 

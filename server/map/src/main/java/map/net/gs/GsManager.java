@@ -1,8 +1,10 @@
 package map.net.gs;
 
+import com.mysql.cj.conf.ConnectionUrlParser;
 import map.cfg.BootConfig;
 import map.event.GsConnectedEvent;
 import map.mapmodule.event.EventManager;
+import map.mapmodule.map.MapId;
 import map.net.link.LinkManager;
 import map.net.map.client.MapClient;
 import map.net.map.client.MapClientManager;
@@ -10,6 +12,7 @@ import map.util.CfgReload;
 import msg.Refs;
 import msg.gmap.GCfgReload;
 import msg.gmap.GMMapInfosNotify;
+import msg.gmap.MapInfo;
 import msg.gmap.MapServerInfo;
 import msg.net.GClientAnnouceServerInfo;
 import msg.net.GServerAnnouceServerInfo;
@@ -38,7 +41,9 @@ public class GsManager extends Server<GsSession> {
         return dispatcher;
     }
 
-    public static volatile ConcurrentHashMap<Integer, MapServerInfo> mapServerInfos = new ConcurrentHashMap<>();
+    public static ConcurrentHashMap<Integer, MapServerInfo> mapServerInfos = new ConcurrentHashMap<>();
+
+    public static ConcurrentHashMap<MapId, Integer> mapId2LineIds = new ConcurrentHashMap<>();
 
     public static void start(Conf conf) {
         if (ins == null) {
@@ -92,10 +97,16 @@ public class GsManager extends Server<GsSession> {
             }
             MapServerInfo mapServerInfo = entry.getValue();
             if (mapServerInfos.putIfAbsent(entry.getKey(), mapServerInfo) == null) {
+
+                for (MapInfo mapInfo : mapServerInfo.mapInfos) {
+                    mapId2LineIds.putIfAbsent(new MapId(mapInfo.x, mapInfo.y), entry.getKey());
+                }
+
                 if (BootConfig.getIns().getLineId() < entry.getKey()) {
-                    pcore.io.Client.Conf conf = MapClientManager.getInst().getConf().createConf();
+                    MapClientManager.ClientConf conf = MapClientManager.getInst().getConf().createConf();
                     conf.ip = mapServerInfo.serverIpPort.ip;
                     conf.port = mapServerInfo.serverIpPort.port;
+                    conf.lineId = entry.getKey();
                     MapClientManager.getInst().getConf().initConf(conf);
                     MapClientManager.getInst().getConf().addConf(conf);
                 }

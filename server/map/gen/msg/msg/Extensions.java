@@ -9,8 +9,6 @@ public class Extensions {
                 return x.toString();
           } public static String tostring_msg_gmap_MGMessage(msg.gmap.MGMessage x) {
                 return x.toString();
-          } public static String tostring_msg_mmap_xnotify(msg.mmap.xnotify x) {
-                return x.toString();
           } public static String tostring_msg_gmap_GMMessage(msg.gmap.GMMessage x) {
                 return x.toString();
           } public static String tostring_msg_plink_GMulticast(msg.plink.GMulticast x) {
@@ -39,6 +37,8 @@ public class Extensions {
                 for(var _e : x) {
                 _s.append(_e).append(',');
                 }_s.append(']'); return _s.toString();
+          } public static String tostring_msg_mmap_MCLineIdNotify(msg.mmap.MCLineIdNotify x) {
+                return x.toString();
           } public static String tostring_msg_gmap_MGMapInfos(msg.gmap.MGMapInfos x) {
                 return x.toString();
           } public static String tostring_msg_plink_LAnnounceOuterNetAddress(msg.plink.LAnnounceOuterNetAddress x) {
@@ -89,8 +89,6 @@ public class Extensions {
             x.marshal(os);
         } public static void marshal_msg_gmap_MGMessage(msg.gmap.MGMessage x, pcore.marshal.Octets os) {
             x.marshal(os);
-        } public static void marshal_msg_mmap_xnotify(msg.mmap.xnotify x, pcore.marshal.Octets os) {
-            x.marshal(os);
         } public static void marshal_msg_gmap_GMMessage(msg.gmap.GMMessage x, pcore.marshal.Octets os) {
             x.marshal(os);
         } public static void marshal_msg_plink_GMulticast(msg.plink.GMulticast x, pcore.marshal.Octets os) {
@@ -119,6 +117,8 @@ public class Extensions {
             for(var _e : x) {
             os.writeByte(_e);
             }
+        } public static void marshal_msg_mmap_MCLineIdNotify(msg.mmap.MCLineIdNotify x, pcore.marshal.Octets os) {
+            x.marshal(os);
         } public static void marshal_msg_gmap_MGMapInfos(msg.gmap.MGMapInfos x, pcore.marshal.Octets os) {
             x.marshal(os);
         } public static void marshal_msg_plink_LAnnounceOuterNetAddress(msg.plink.LAnnounceOuterNetAddress x, pcore.marshal.Octets os) {
@@ -170,8 +170,6 @@ public class Extensions {
             var x = new msg.plink.GForward(); x.unmarshal(os); return x;
         } public static msg.gmap.MGMessage unmarshal_msg_gmap_MGMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.MGMessage(); x.unmarshal(os); return x;
-        } public static msg.mmap.xnotify unmarshal_msg_mmap_xnotify(pcore.marshal.Octets os) {
-            var x = new msg.mmap.xnotify(); x.unmarshal(os); return x;
         } public static msg.gmap.GMMessage unmarshal_msg_gmap_GMMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.GMMessage(); x.unmarshal(os); return x;
         } public static msg.plink.GMulticast unmarshal_msg_plink_GMulticast(pcore.marshal.Octets os) {
@@ -202,6 +200,8 @@ public class Extensions {
             for(int i = 0 ; i < n ; i++) {
             x[i] = os.readByte();
             }return x;
+        } public static msg.mmap.MCLineIdNotify unmarshal_msg_mmap_MCLineIdNotify(pcore.marshal.Octets os) {
+            var x = new msg.mmap.MCLineIdNotify(); x.unmarshal(os); return x;
         } public static msg.gmap.MGMapInfos unmarshal_msg_gmap_MGMapInfos(pcore.marshal.Octets os) {
             var x = new msg.gmap.MGMapInfos(); x.unmarshal(os); return x;
         } public static msg.plink.LAnnounceOuterNetAddress unmarshal_msg_plink_LAnnounceOuterNetAddress(pcore.marshal.Octets os) {
@@ -255,8 +255,6 @@ public class Extensions {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_gmap_MGMessage(msg.gmap.MGMessage x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
-        } public static void marshal_compatible_msg_mmap_xnotify(msg.mmap.xnotify x, pcore.marshal.Octets os) {
-            x.marshalCompatible(os);
         } public static void marshal_compatible_msg_gmap_GMMessage(msg.gmap.GMMessage x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_plink_GMulticast(msg.plink.GMulticast x, pcore.marshal.Octets os) {
@@ -285,6 +283,8 @@ public class Extensions {
             for(var _e : x) {
             os.writeByte(_e);
             }
+        } public static void marshal_compatible_msg_mmap_MCLineIdNotify(msg.mmap.MCLineIdNotify x, pcore.marshal.Octets os) {
+            x.marshalCompatible(os);
         } public static void marshal_compatible_msg_gmap_MGMapInfos(msg.gmap.MGMapInfos x, pcore.marshal.Octets os) {
             x.marshalCompatible(os);
         } public static void marshal_compatible_msg_plink_LAnnounceOuterNetAddress(msg.plink.LAnnounceOuterNetAddress x, pcore.marshal.Octets os) {
@@ -336,8 +336,6 @@ public class Extensions {
             var x = new msg.plink.GForward(); x.unmarshalCompatible(os); return x;
         } public static msg.gmap.MGMessage unmarshal_compatible_msg_gmap_MGMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.MGMessage(); x.unmarshalCompatible(os); return x;
-        } public static msg.mmap.xnotify unmarshal_compatible_msg_mmap_xnotify(pcore.marshal.Octets os) {
-            var x = new msg.mmap.xnotify(); x.unmarshalCompatible(os); return x;
         } public static msg.gmap.GMMessage unmarshal_compatible_msg_gmap_GMMessage(pcore.marshal.Octets os) {
             var x = new msg.gmap.GMMessage(); x.unmarshalCompatible(os); return x;
         } public static msg.plink.GMulticast unmarshal_compatible_msg_plink_GMulticast(pcore.marshal.Octets os) {
@@ -368,6 +366,8 @@ public class Extensions {
             for(int i = 0 ; i < n ; i++) {
             x[i] = os.readByte();
             }return x;
+        } public static msg.mmap.MCLineIdNotify unmarshal_compatible_msg_mmap_MCLineIdNotify(pcore.marshal.Octets os) {
+            var x = new msg.mmap.MCLineIdNotify(); x.unmarshalCompatible(os); return x;
         } public static msg.gmap.MGMapInfos unmarshal_compatible_msg_gmap_MGMapInfos(pcore.marshal.Octets os) {
             var x = new msg.gmap.MGMapInfos(); x.unmarshalCompatible(os); return x;
         } public static msg.plink.LAnnounceOuterNetAddress unmarshal_compatible_msg_plink_LAnnounceOuterNetAddress(pcore.marshal.Octets os) {

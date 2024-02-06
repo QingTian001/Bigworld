@@ -24,9 +24,8 @@
 	</module>
 	
 	<module name="mmap">
-		<proto name="xnotify"> 
-			<var name="mapId" type="long"/>
-			<var name="data" type="bytes"/>
+		<proto name="MCLineIdNotify"> 
+			<var name="lineId" type="int"/>
 		</proto>
 	</module>
 	

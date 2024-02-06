@@ -8,6 +8,7 @@ import msg.Refs;
 import msg.gmap.MGMapInfos;
 import msg.gmap.MGMessage;
 import msg.gmap.MapInfo;
+import msg.mmap.MCLineIdNotify;
 import msg.net.GClientAnnouceServerInfo;
 import msg.net.GServerAnnouceServerInfo;
 import pcore.collection.Int2ObjectHashMap;
@@ -18,11 +19,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 public class MapClientManager extends DynamicMultiClientManager {
     private static MapClientManager inst;
     private final Conf conf;
+
+    public ConcurrentHashMap<Integer, Integer> lineId2ServerId = new ConcurrentHashMap<>();
 
 
     public static MapClientManager getInst() {
@@ -61,6 +65,10 @@ public class MapClientManager extends DynamicMultiClientManager {
         super.onAddClient(client);
         GClientAnnouceServerInfo p = new GClientAnnouceServerInfo(BootConfig.getIns().getServerId());
         client.send(p);
+
+        MCLineIdNotify lineIdNotify = new MCLineIdNotify();
+        lineIdNotify.lineId = ((ClientConf)client.getConf()).lineId;
+        client.send(lineIdNotify);
     }
 
     @Override
@@ -75,14 +83,24 @@ public class MapClientManager extends DynamicMultiClientManager {
 
     private void process(GServerAnnouceServerInfo p) {
         register(p.serverId, (MapClient)((Session)p.getContext()).getConnection().getManager(), p.keepAliveInterval);
+        MapClient client = (MapClient)((Session)p.getContext()).getConnection().getManager();
+        ClientConf conf = (ClientConf)client.getConf();
+
+        lineId2ServerId.put(conf.lineId, p.serverId);
+
+    }
+
+    public static class ClientConf extends Client.Conf {
+
+        public int lineId;
     }
 
 
     public static class Conf extends DynamicMultiClientManager.Conf {
 
         @Override
-        public Client.Conf createConf() {
-            return new Client.Conf();
+        public ClientConf createConf() {
+            return new ClientConf();
         }
     }
 
