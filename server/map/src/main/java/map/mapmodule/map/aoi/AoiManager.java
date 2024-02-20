@@ -1,5 +1,6 @@
 package map.mapmodule.map.aoi;
 
+import map.mapmodule.entity.Entity;
 import map.mapmodule.map.GMap;
 import map.mapmodule.map.MapId;
 
@@ -17,5 +18,9 @@ public class AoiManager {
 
     void init() {
         MapId mapId = this.gMap.getMapId();
+    }
+
+    public void updateEntity(Entity entity,  Grid oldGrid, Grid newGrid) {
+
     }
 }

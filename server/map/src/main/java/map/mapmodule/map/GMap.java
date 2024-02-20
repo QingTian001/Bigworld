@@ -26,11 +26,14 @@ public abstract class GMap {
     private final EventManager eventManager = new EventManager();
     private final HashSet<DelayTask> delayTasks = new HashSet<>();
 
+    private final MapSizeManager mapSizeManager;
+
     private final MapId mapId;
 
     public GMap(MapBuilder builder) {
         id = ID_GEN.incrementAndGet();
         this.mapId = builder.mapId;
+        mapSizeManager = new MapSizeManager(mapId);
     }
 
     public long getInstId() {
@@ -51,6 +54,10 @@ public abstract class GMap {
     protected void update() {
 
 
+    }
+
+    public final MapSizeManager getMapSizeManager() {
+        return mapSizeManager;
     }
 
     public TaskQueue getTaskQueue() {

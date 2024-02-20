@@ -15,17 +15,35 @@ public class MapSizeManager {
         return leftDownY;
     }
 
+    public int getLeftDownGridY() {
+        return getLeftDownY() / Util.GRID_SIZE;
+    }
+
     public int getLeftDownX() {
         return leftDownX;
+    }
+
+    public int getLeftDownGridX() {
+        return getLeftDownX() / Util.GRID_SIZE;
     }
 
     public int getRightTopX() {
         return leftDownX + Util.BLOCK_SIZE;
     }
 
+    public int getRightTopGridX() {
+        return getRightTopX() / Util.GRID_SIZE;
+    }
+
     public int getRightTopY() {
         return leftDownY + Util.BLOCK_SIZE;
     }
+
+
+    public int getRightTopGridY() {
+        return getRightTopY() / Util.GRID_SIZE;
+    }
+
 
     public int getAoiLeftDownX() {
         if (leftDownX == 0) {
@@ -33,6 +51,10 @@ public class MapSizeManager {
         } else {
             return leftDownX - Util.GRID_SIZE;
         }
+    }
+
+    public int getAoiLeftDownGridX() {
+        return getAoiLeftDownX() / Util.GRID_SIZE;
     }
 
     public int getAoiLeftDownY() {
@@ -43,6 +65,10 @@ public class MapSizeManager {
         }
     }
 
+    public int getAoiLeftDownGridY() {
+        return getAoiLeftDownY() / Util.GRID_SIZE;
+    }
+
     public int getAoiRightTopX() {
         if (getRightTopX() == Util.MAP_SIZE) {
             return getRightTopX();
@@ -51,12 +77,20 @@ public class MapSizeManager {
         }
     }
 
+    public int getAoiRightTopGridX() {
+        return getAoiRightTopX() / Util.GRID_SIZE;
+    }
+
     public int getAoiRightTopY() {
         if (getRightTopY() == Util.MAP_SIZE) {
             return getRightTopY();
         } else {
             return getRightTopY() + Util.GRID_SIZE;
         }
+    }
+
+    public int getAoiRightTopGridY() {
+        return getAoiRightTopY() / Util.GRID_SIZE;
     }
 
     public boolean isAoiLeftMore() {
