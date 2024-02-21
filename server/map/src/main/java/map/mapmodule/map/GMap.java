@@ -5,6 +5,7 @@ import map.mapmodule.event.EntityListener;
 import map.mapmodule.event.Event;
 import map.mapmodule.event.EventManager;
 import map.mapmodule.event.MapListener;
+import map.mapmodule.map.aoi.AoiManager;
 import pcore.io.Protocol;
 import pcore.misc.TaskQueue;
 
@@ -28,12 +29,15 @@ public abstract class GMap {
 
     private final MapSizeManager mapSizeManager;
 
+    private final AoiManager aoiManager;
+
     private final MapId mapId;
 
     public GMap(MapBuilder builder) {
         id = ID_GEN.incrementAndGet();
         this.mapId = builder.mapId;
         mapSizeManager = new MapSizeManager(mapId);
+        this.aoiManager = new AoiManager(this);
     }
 
     public long getInstId() {
@@ -58,6 +62,10 @@ public abstract class GMap {
 
     public final MapSizeManager getMapSizeManager() {
         return mapSizeManager;
+    }
+
+    public final AoiManager getAoiManager() {
+        return aoiManager;
     }
 
     public TaskQueue getTaskQueue() {

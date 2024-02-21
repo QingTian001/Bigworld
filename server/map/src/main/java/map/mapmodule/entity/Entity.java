@@ -1,5 +1,6 @@
 package map.mapmodule.entity;
 
+import map.mapmodule.Vector2;
 import map.mapmodule.map.GMap;
 
 import java.util.*;
@@ -8,10 +9,13 @@ import java.util.concurrent.atomic.AtomicLong;
 public final class Entity {
     public static final long NOT_HERO_ID = -1L;
     private final long id;
+
+    private final Vector2 pos = new Vector2();
     private final static AtomicLong ID_GEN = new AtomicLong();
 
     private final GMap map;
 
+    private final EntityAoiManager entityAoiManager = new EntityAoiManager(this);
 
     public Entity(GMap map, long heroUid) {
         this.map = map;
@@ -31,6 +35,9 @@ public final class Entity {
     }
 
 
+    public final Vector2 getPos() {
+        return pos;
+    }
 
 
 }
