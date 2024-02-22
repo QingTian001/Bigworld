@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="212102fe-1c14-46de-9ea1-ccd200fffbcf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/entity/EntityAoiManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/GMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/map/mapmodule/map/aoi/GridFake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
